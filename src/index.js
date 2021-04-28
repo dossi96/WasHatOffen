@@ -284,6 +284,7 @@ class DistrictMonth extends React.Component {
   }
 
   componentDidMount() {
+    // Per Day Statistics
     var data = []
 
     this.props.cases.map((d, index) => {
@@ -293,16 +294,55 @@ class DistrictMonth extends React.Component {
       var dateMonth = this.props.cases[index]["date"].substring(5,7);
       var dateYear = this.props.cases[index]["date"].substring(2,4);
       var dateCorrected = dateDay + "." + dateMonth + "." + dateYear;
-      element["name"] = dateCorrected;
-      element["cases"] = this.props.cases[index]["cases"];
-      element["recovered"] = this.props.recovered[index]["recovered"];
-      element["deaths"] = this.props.deaths[index]["deaths"];
+      element["datum"] = dateCorrected;
+      element["Neue Fälle"] = this.props.cases[index]["cases"];
+      element["Genesene Personen"] = this.props.recovered[index]["recovered"];
+      element["Todesfälle"] = this.props.deaths[index]["deaths"];
 
       data.push(element);
     })
-
-
     this.setState({data: data})
+
+
+    // Cumulativ Statistics
+    var dataCumulative = []
+    var firstElement = true;
+    var totalCases = 5000;
+    var lastCases = 5000;
+    var totalRecovered = 4000;
+    var lastRecovered = 4000;
+    var totalDeaths = 3000;
+    var lastDeaths = 3000;
+    var arrayLength = this.props.cases.length - 1;
+    this.props.cases.map((d, index) => {
+      var element = {}
+
+      var dateDay = this.props.cases[this.props.cases.length - 1 - index]["date"].substring(8,10);
+      var dateMonth = this.props.cases[this.props.cases.length - 1 - index]["date"].substring(5,7);
+      var dateYear = this.props.cases[this.props.cases.length - 1 - index]["date"].substring(2,4);
+      var dateCorrected = dateDay + "." + dateMonth + "." + dateYear;
+
+      element["datum"] = dateCorrected;
+
+      element["Neue Fälle"] = totalCases;
+      totalCases -= this.props.cases[arrayLength - index]["cases"];
+
+      element["Genesene Personen"] = totalRecovered;
+      totalRecovered -= this.props.recovered[arrayLength - index]["recovered"];
+
+      element["Todesfälle"] = totalDeaths;
+      totalDeaths -= this.props.deaths[arrayLength - index]["deaths"];
+
+      dataCumulative.push(element)
+    })
+
+    dataCumulative = dataCumulative.reverse();
+    console.log(dataCumulative)
+
+
+
+
+
   }
 
   render() {
@@ -310,6 +350,7 @@ class DistrictMonth extends React.Component {
       <div className="contentContainer">
         <p className="districtDayHeader">Statistiken</p>
 
+        {/* Per Day Statistics */}
         <div className="plotWrapper">
           <div className="plotContainer">
             <ResponsiveContainer width="100%" height="100%">
@@ -325,13 +366,13 @@ class DistrictMonth extends React.Component {
                 // }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" style={{fontFamily: "var(--mainFont)"}}/>
+                <XAxis dataKey="datum" style={{fontFamily: "var(--mainFont)"}}/>
                 <YAxis domain={[0,'dataMax']} style={{fontFamily: "var(--mainFont)"}}/>
                 <Tooltip style={{fontFamily: "var(--mainFont)"}}/>
                 <Legend style={{fontFamily: "var(--mainFont)"}}/>
-                <Bar dataKey="cases" fill="#465973" />
-                <Bar dataKey="recovered" fill="#6181b0" />
-                <Bar dataKey="deaths" fill="#202936" />
+                <Bar dataKey="Neue Fälle" fill="#465973" />
+                <Bar dataKey="Genesene Personen" fill="#6181b0" />
+                <Bar dataKey="Todesfälle" fill="#202936" />
               </BarChart>
             </ResponsiveContainer>
           </div>
