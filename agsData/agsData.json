@@ -1,0 +1,2064 @@
+{
+    "agsData": [
+        {
+            "name": "Regionalverband Saarbrücken",
+            "county": "LK Stadtverband Saarbrücken",
+            "ags": "10041"
+        },
+        {
+            "name": "Merzig-Wadern",
+            "county": "LK Merzig-Wadern",
+            "ags": "10042"
+        },
+        {
+            "name": "Neunkirchen",
+            "county": "LK Neunkirchen",
+            "ags": "10043"
+        },
+        {
+            "name": "Saarlouis",
+            "county": "LK Saarlouis",
+            "ags": "10044"
+        },
+        {
+            "name": "Saarpfalz-Kreis",
+            "county": "LK Saar-Pfalz-Kreis",
+            "ags": "10045"
+        },
+        {
+            "name": "St. Wendel",
+            "county": "LK Sankt Wendel",
+            "ags": "10046"
+        },
+        {
+            "name": "Berlin Mitte",
+            "county": "SK Berlin Mitte",
+            "ags": "11001"
+        },
+        {
+            "name": "Berlin Friedrichshain-Kreuzberg",
+            "county": "SK Berlin Friedrichshain-Kreuzberg",
+            "ags": "11002"
+        },
+        {
+            "name": "Berlin Pankow",
+            "county": "SK Berlin Pankow",
+            "ags": "11003"
+        },
+        {
+            "name": "Berlin Charlottenburg-Wilmersdorf",
+            "county": "SK Berlin Charlottenburg-Wilmersdorf",
+            "ags": "11004"
+        },
+        {
+            "name": "Berlin Spandau",
+            "county": "SK Berlin Spandau",
+            "ags": "11005"
+        },
+        {
+            "name": "Berlin Steglitz-Zehlendorf",
+            "county": "SK Berlin Steglitz-Zehlendorf",
+            "ags": "11006"
+        },
+        {
+            "name": "Berlin Tempelhof-Schöneberg",
+            "county": "SK Berlin Tempelhof-Schöneberg",
+            "ags": "11007"
+        },
+        {
+            "name": "Berlin Neukölln",
+            "county": "SK Berlin Neukölln",
+            "ags": "11008"
+        },
+        {
+            "name": "Berlin Treptow-Köpenick",
+            "county": "SK Berlin Treptow-Köpenick",
+            "ags": "11009"
+        },
+        {
+            "name": "Berlin Marzahn-Hellersdorf",
+            "county": "SK Berlin Marzahn-Hellersdorf",
+            "ags": "11010"
+        },
+        {
+            "name": "Berlin Lichtenberg",
+            "county": "SK Berlin Lichtenberg",
+            "ags": "11011"
+        },
+        {
+            "name": "Berlin Reinickendorf",
+            "county": "SK Berlin Reinickendorf",
+            "ags": "11012"
+        },
+        {
+            "name": "Brandenburg an der Havel",
+            "county": "SK Brandenburg a.d.Havel",
+            "ags": "12051"
+        },
+        {
+            "name": "Cottbus",
+            "county": "SK Cottbus",
+            "ags": "12052"
+        },
+        {
+            "name": "Frankfurt (Oder)",
+            "county": "SK Frankfurt (Oder)",
+            "ags": "12053"
+        },
+        {
+            "name": "Potsdam",
+            "county": "SK Potsdam",
+            "ags": "12054"
+        },
+        {
+            "name": "Barnim",
+            "county": "LK Barnim",
+            "ags": "12060"
+        },
+        {
+            "name": "Dahme-Spreewald",
+            "county": "LK Dahme-Spreewald",
+            "ags": "12061"
+        },
+        {
+            "name": "Elbe-Elster",
+            "county": "LK Elbe-Elster",
+            "ags": "12062"
+        },
+        {
+            "name": "Havelland",
+            "county": "LK Havelland",
+            "ags": "12063"
+        },
+        {
+            "name": "Märkisch-Oderland",
+            "county": "LK Märkisch-Oderland",
+            "ags": "12064"
+        },
+        {
+            "name": "Oberhavel",
+            "county": "LK Oberhavel",
+            "ags": "12065"
+        },
+        {
+            "name": "Oberspreewald-Lausitz",
+            "county": "LK Oberspreewald-Lausitz",
+            "ags": "12066"
+        },
+        {
+            "name": "Oder-Spree",
+            "county": "LK Oder-Spree",
+            "ags": "12067"
+        },
+        {
+            "name": "Ostprignitz-Ruppin",
+            "county": "LK Ostprignitz-Ruppin",
+            "ags": "12068"
+        },
+        {
+            "name": "Potsdam-Mittelmark",
+            "county": "LK Potsdam-Mittelmark",
+            "ags": "12069"
+        },
+        {
+            "name": "Prignitz",
+            "county": "LK Prignitz",
+            "ags": "12070"
+        },
+        {
+            "name": "Spree-Neiße",
+            "county": "LK Spree-Neiße",
+            "ags": "12071"
+        },
+        {
+            "name": "Teltow-Fläming",
+            "county": "LK Teltow-Fläming",
+            "ags": "12072"
+        },
+        {
+            "name": "Uckermark",
+            "county": "LK Uckermark",
+            "ags": "12073"
+        },
+        {
+            "name": "Rostock",
+            "county": "SK Rostock",
+            "ags": "13003"
+        },
+        {
+            "name": "Schwerin",
+            "county": "SK Schwerin",
+            "ags": "13004"
+        },
+        {
+            "name": "Mecklenburgische Seenplatte",
+            "county": "LK Mecklenburgische Seenplatte",
+            "ags": "13071"
+        },
+        {
+            "name": "Rostock",
+            "county": "LK Rostock",
+            "ags": "13072"
+        },
+        {
+            "name": "Vorpommern-Rügen",
+            "county": "LK Vorpommern-Rügen",
+            "ags": "13073"
+        },
+        {
+            "name": "Nordwestmecklenburg",
+            "county": "LK Nordwestmecklenburg",
+            "ags": "13074"
+        },
+        {
+            "name": "Vorpommern-Greifswald",
+            "county": "LK Vorpommern-Greifswald",
+            "ags": "13075"
+        },
+        {
+            "name": "Ludwigslust-Parchim",
+            "county": "LK Ludwigslust-Parchim",
+            "ags": "13076"
+        },
+        {
+            "name": "Chemnitz",
+            "county": "SK Chemnitz",
+            "ags": "14511"
+        },
+        {
+            "name": "Erzgebirgskreis",
+            "county": "LK Erzgebirgskreis",
+            "ags": "14521"
+        },
+        {
+            "name": "Mittelsachsen",
+            "county": "LK Mittelsachsen",
+            "ags": "14522"
+        },
+        {
+            "name": "Vogtlandkreis",
+            "county": "LK Vogtlandkreis",
+            "ags": "14523"
+        },
+        {
+            "name": "Zwickau",
+            "county": "LK Zwickau",
+            "ags": "14524"
+        },
+        {
+            "name": "Dresden",
+            "county": "SK Dresden",
+            "ags": "14612"
+        },
+        {
+            "name": "Bautzen",
+            "county": "LK Bautzen",
+            "ags": "14625"
+        },
+        {
+            "name": "Görlitz",
+            "county": "LK Görlitz",
+            "ags": "14626"
+        },
+        {
+            "name": "Meißen",
+            "county": "LK Meißen",
+            "ags": "14627"
+        },
+        {
+            "name": "Sächsische Schweiz-Osterzgebirge",
+            "county": "LK Sächsische Schweiz-Osterzgebirge",
+            "ags": "14628"
+        },
+        {
+            "name": "Leipzig",
+            "county": "SK Leipzig",
+            "ags": "14713"
+        },
+        {
+            "name": "Leipzig",
+            "county": "LK Leipzig",
+            "ags": "14729"
+        },
+        {
+            "name": "Nordsachsen",
+            "county": "LK Nordsachsen",
+            "ags": "14730"
+        },
+        {
+            "name": "Dessau-Roßlau",
+            "county": "SK Dessau-Roßlau",
+            "ags": "15001"
+        },
+        {
+            "name": "Halle (Saale)",
+            "county": "SK Halle",
+            "ags": "15002"
+        },
+        {
+            "name": "Magdeburg",
+            "county": "SK Magdeburg",
+            "ags": "15003"
+        },
+        {
+            "name": "Altmarkkreis Salzwedel",
+            "county": "LK Altmarkkreis Salzwedel",
+            "ags": "15081"
+        },
+        {
+            "name": "Anhalt-Bitterfeld",
+            "county": "LK Anhalt-Bitterfeld",
+            "ags": "15082"
+        },
+        {
+            "name": "Börde",
+            "county": "LK Börde",
+            "ags": "15083"
+        },
+        {
+            "name": "Burgenlandkreis",
+            "county": "LK Burgenlandkreis",
+            "ags": "15084"
+        },
+        {
+            "name": "Harz",
+            "county": "LK Harz",
+            "ags": "15085"
+        },
+        {
+            "name": "Jerichower Land",
+            "county": "LK Jerichower Land",
+            "ags": "15086"
+        },
+        {
+            "name": "Mansfeld-Südharz",
+            "county": "LK Mansfeld-Südharz",
+            "ags": "15087"
+        },
+        {
+            "name": "Saalekreis",
+            "county": "LK Saalekreis",
+            "ags": "15088"
+        },
+        {
+            "name": "Salzlandkreis",
+            "county": "LK Salzlandkreis",
+            "ags": "15089"
+        },
+        {
+            "name": "Stendal",
+            "county": "LK Stendal",
+            "ags": "15090"
+        },
+        {
+            "name": "Wittenberg",
+            "county": "LK Wittenberg",
+            "ags": "15091"
+        },
+        {
+            "name": "Erfurt",
+            "county": "SK Erfurt",
+            "ags": "16051"
+        },
+        {
+            "name": "Gera",
+            "county": "SK Gera",
+            "ags": "16052"
+        },
+        {
+            "name": "Jena",
+            "county": "SK Jena",
+            "ags": "16053"
+        },
+        {
+            "name": "Suhl",
+            "county": "SK Suhl",
+            "ags": "16054"
+        },
+        {
+            "name": "Weimar",
+            "county": "SK Weimar",
+            "ags": "16055"
+        },
+        {
+            "name": "Eisenach",
+            "county": "SK Eisenach",
+            "ags": "16056"
+        },
+        {
+            "name": "Eichsfeld",
+            "county": "LK Eichsfeld",
+            "ags": "16061"
+        },
+        {
+            "name": "Nordhausen",
+            "county": "LK Nordhausen",
+            "ags": "16062"
+        },
+        {
+            "name": "Wartburgkreis",
+            "county": "LK Wartburgkreis",
+            "ags": "16063"
+        },
+        {
+            "name": "Unstrut-Hainich-Kreis",
+            "county": "LK Unstrut-Hainich-Kreis",
+            "ags": "16064"
+        },
+        {
+            "name": "Kyffhäuserkreis",
+            "county": "LK Kyffhäuserkreis",
+            "ags": "16065"
+        },
+        {
+            "name": "Schmalkalden-Meiningen",
+            "county": "LK Schmalkalden-Meiningen",
+            "ags": "16066"
+        },
+        {
+            "name": "Gotha",
+            "county": "LK Gotha",
+            "ags": "16067"
+        },
+        {
+            "name": "Sömmerda",
+            "county": "LK Sömmerda",
+            "ags": "16068"
+        },
+        {
+            "name": "Hildburghausen",
+            "county": "LK Hildburghausen",
+            "ags": "16069"
+        },
+        {
+            "name": "Ilm-Kreis",
+            "county": "LK Ilm-Kreis",
+            "ags": "16070"
+        },
+        {
+            "name": "Weimarer Land",
+            "county": "LK Weimarer Land",
+            "ags": "16071"
+        },
+        {
+            "name": "Sonneberg",
+            "county": "LK Sonneberg",
+            "ags": "16072"
+        },
+        {
+            "name": "Saalfeld-Rudolstadt",
+            "county": "LK Saalfeld-Rudolstadt",
+            "ags": "16073"
+        },
+        {
+            "name": "Saale-Holzland-Kreis",
+            "county": "LK Saale-Holzland-Kreis",
+            "ags": "16074"
+        },
+        {
+            "name": "Saale-Orla-Kreis",
+            "county": "LK Saale-Orla-Kreis",
+            "ags": "16075"
+        },
+        {
+            "name": "Greiz",
+            "county": "LK Greiz",
+            "ags": "16076"
+        },
+        {
+            "name": "Altenburger Land",
+            "county": "LK Altenburger Land",
+            "ags": "16077"
+        },
+        {
+            "name": "Flensburg",
+            "county": "SK Flensburg",
+            "ags": "01001"
+        },
+        {
+            "name": "Kiel",
+            "county": "SK Kiel",
+            "ags": "01002"
+        },
+        {
+            "name": "Lübeck",
+            "county": "SK Lübeck",
+            "ags": "01003"
+        },
+        {
+            "name": "Neumünster",
+            "county": "SK Neumünster",
+            "ags": "01004"
+        },
+        {
+            "name": "Dithmarschen",
+            "county": "LK Dithmarschen",
+            "ags": "01051"
+        },
+        {
+            "name": "Herzogtum Lauenburg",
+            "county": "LK Herzogtum Lauenburg",
+            "ags": "01053"
+        },
+        {
+            "name": "Nordfriesland",
+            "county": "LK Nordfriesland",
+            "ags": "01054"
+        },
+        {
+            "name": "Ostholstein",
+            "county": "LK Ostholstein",
+            "ags": "01055"
+        },
+        {
+            "name": "Pinneberg",
+            "county": "LK Pinneberg",
+            "ags": "01056"
+        },
+        {
+            "name": "Plön",
+            "county": "LK Plön",
+            "ags": "01057"
+        },
+        {
+            "name": "Rendsburg-Eckernförde",
+            "county": "LK Rendsburg-Eckernförde",
+            "ags": "01058"
+        },
+        {
+            "name": "Schleswig-Flensburg",
+            "county": "LK Schleswig-Flensburg",
+            "ags": "01059"
+        },
+        {
+            "name": "Segeberg",
+            "county": "LK Segeberg",
+            "ags": "01060"
+        },
+        {
+            "name": "Steinburg",
+            "county": "LK Steinburg",
+            "ags": "01061"
+        },
+        {
+            "name": "Stormarn",
+            "county": "LK Stormarn",
+            "ags": "01062"
+        },
+        {
+            "name": "Hamburg",
+            "county": "SK Hamburg",
+            "ags": "02000"
+        },
+        {
+            "name": "Braunschweig",
+            "county": "SK Braunschweig",
+            "ags": "03101"
+        },
+        {
+            "name": "Salzgitter",
+            "county": "SK Salzgitter",
+            "ags": "03102"
+        },
+        {
+            "name": "Wolfsburg",
+            "county": "SK Wolfsburg",
+            "ags": "03103"
+        },
+        {
+            "name": "Gifhorn",
+            "county": "LK Gifhorn",
+            "ags": "03151"
+        },
+        {
+            "name": "Goslar",
+            "county": "LK Goslar",
+            "ags": "03153"
+        },
+        {
+            "name": "Helmstedt",
+            "county": "LK Helmstedt",
+            "ags": "03154"
+        },
+        {
+            "name": "Northeim",
+            "county": "LK Northeim",
+            "ags": "03155"
+        },
+        {
+            "name": "Peine",
+            "county": "LK Peine",
+            "ags": "03157"
+        },
+        {
+            "name": "Wolfenbüttel",
+            "county": "LK Wolfenbüttel",
+            "ags": "03158"
+        },
+        {
+            "name": "Göttingen",
+            "county": "LK Göttingen",
+            "ags": "03159"
+        },
+        {
+            "name": "Region Hannover",
+            "county": "Region Hannover",
+            "ags": "03241"
+        },
+        {
+            "name": "Diepholz",
+            "county": "LK Diepholz",
+            "ags": "03251"
+        },
+        {
+            "name": "Hameln-Pyrmont",
+            "county": "LK Hameln-Pyrmont",
+            "ags": "03252"
+        },
+        {
+            "name": "Hildesheim",
+            "county": "LK Hildesheim",
+            "ags": "03254"
+        },
+        {
+            "name": "Holzminden",
+            "county": "LK Holzminden",
+            "ags": "03255"
+        },
+        {
+            "name": "Nienburg (Weser)",
+            "county": "LK Nienburg (Weser)",
+            "ags": "03256"
+        },
+        {
+            "name": "Schaumburg",
+            "county": "LK Schaumburg",
+            "ags": "03257"
+        },
+        {
+            "name": "Celle",
+            "county": "LK Celle",
+            "ags": "03351"
+        },
+        {
+            "name": "Cuxhaven",
+            "county": "LK Cuxhaven",
+            "ags": "03352"
+        },
+        {
+            "name": "Harburg",
+            "county": "LK Harburg",
+            "ags": "03353"
+        },
+        {
+            "name": "Lüchow-Dannenberg",
+            "county": "LK Lüchow-Dannenberg",
+            "ags": "03354"
+        },
+        {
+            "name": "Lüneburg",
+            "county": "LK Lüneburg",
+            "ags": "03355"
+        },
+        {
+            "name": "Osterholz",
+            "county": "LK Osterholz",
+            "ags": "03356"
+        },
+        {
+            "name": "Rotenburg (Wümme)",
+            "county": "LK Rotenburg (Wümme)",
+            "ags": "03357"
+        },
+        {
+            "name": "Heidekreis",
+            "county": "LK Heidekreis",
+            "ags": "03358"
+        },
+        {
+            "name": "Stade",
+            "county": "LK Stade",
+            "ags": "03359"
+        },
+        {
+            "name": "Uelzen",
+            "county": "LK Uelzen",
+            "ags": "03360"
+        },
+        {
+            "name": "Verden",
+            "county": "LK Verden",
+            "ags": "03361"
+        },
+        {
+            "name": "Delmenhorst",
+            "county": "SK Delmenhorst",
+            "ags": "03401"
+        },
+        {
+            "name": "Emden",
+            "county": "SK Emden",
+            "ags": "03402"
+        },
+        {
+            "name": "Oldenburg (Oldb)",
+            "county": "SK Oldenburg",
+            "ags": "03403"
+        },
+        {
+            "name": "Osnabrück",
+            "county": "SK Osnabrück",
+            "ags": "03404"
+        },
+        {
+            "name": "Wilhelmshaven",
+            "county": "SK Wilhelmshaven",
+            "ags": "03405"
+        },
+        {
+            "name": "Ammerland",
+            "county": "LK Ammerland",
+            "ags": "03451"
+        },
+        {
+            "name": "Aurich",
+            "county": "LK Aurich",
+            "ags": "03452"
+        },
+        {
+            "name": "Cloppenburg",
+            "county": "LK Cloppenburg",
+            "ags": "03453"
+        },
+        {
+            "name": "Emsland",
+            "county": "LK Emsland",
+            "ags": "03454"
+        },
+        {
+            "name": "Friesland",
+            "county": "LK Friesland",
+            "ags": "03455"
+        },
+        {
+            "name": "Grafschaft Bentheim",
+            "county": "LK Grafschaft Bentheim",
+            "ags": "03456"
+        },
+        {
+            "name": "Leer",
+            "county": "LK Leer",
+            "ags": "03457"
+        },
+        {
+            "name": "Oldenburg",
+            "county": "LK Oldenburg",
+            "ags": "03458"
+        },
+        {
+            "name": "Osnabrück",
+            "county": "LK Osnabrück",
+            "ags": "03459"
+        },
+        {
+            "name": "Vechta",
+            "county": "LK Vechta",
+            "ags": "03460"
+        },
+        {
+            "name": "Wesermarsch",
+            "county": "LK Wesermarsch",
+            "ags": "03461"
+        },
+        {
+            "name": "Wittmund",
+            "county": "LK Wittmund",
+            "ags": "03462"
+        },
+        {
+            "name": "Bremen",
+            "county": "SK Bremen",
+            "ags": "04011"
+        },
+        {
+            "name": "Bremerhaven",
+            "county": "SK Bremerhaven",
+            "ags": "04012"
+        },
+        {
+            "name": "Düsseldorf",
+            "county": "SK Düsseldorf",
+            "ags": "05111"
+        },
+        {
+            "name": "Duisburg",
+            "county": "SK Duisburg",
+            "ags": "05112"
+        },
+        {
+            "name": "Essen",
+            "county": "SK Essen",
+            "ags": "05113"
+        },
+        {
+            "name": "Krefeld",
+            "county": "SK Krefeld",
+            "ags": "05114"
+        },
+        {
+            "name": "Mönchengladbach",
+            "county": "SK Mönchengladbach",
+            "ags": "05116"
+        },
+        {
+            "name": "Mülheim an der Ruhr",
+            "county": "SK Mülheim a.d.Ruhr",
+            "ags": "05117"
+        },
+        {
+            "name": "Oberhausen",
+            "county": "SK Oberhausen",
+            "ags": "05119"
+        },
+        {
+            "name": "Remscheid",
+            "county": "SK Remscheid",
+            "ags": "05120"
+        },
+        {
+            "name": "Solingen",
+            "county": "SK Solingen",
+            "ags": "05122"
+        },
+        {
+            "name": "Wuppertal",
+            "county": "SK Wuppertal",
+            "ags": "05124"
+        },
+        {
+            "name": "Kleve",
+            "county": "LK Kleve",
+            "ags": "05154"
+        },
+        {
+            "name": "Mettmann",
+            "county": "LK Mettmann",
+            "ags": "05158"
+        },
+        {
+            "name": "Rhein-Kreis Neuss",
+            "county": "LK Rhein-Kreis Neuss",
+            "ags": "05162"
+        },
+        {
+            "name": "Viersen",
+            "county": "LK Viersen",
+            "ags": "05166"
+        },
+        {
+            "name": "Wesel",
+            "county": "LK Wesel",
+            "ags": "05170"
+        },
+        {
+            "name": "Bonn",
+            "county": "SK Bonn",
+            "ags": "05314"
+        },
+        {
+            "name": "Köln",
+            "county": "SK Köln",
+            "ags": "05315"
+        },
+        {
+            "name": "Leverkusen",
+            "county": "SK Leverkusen",
+            "ags": "05316"
+        },
+        {
+            "name": "Städteregion Aachen",
+            "county": "StadtRegion Aachen",
+            "ags": "05334"
+        },
+        {
+            "name": "Düren",
+            "county": "LK Düren",
+            "ags": "05358"
+        },
+        {
+            "name": "Rhein-Erft-Kreis",
+            "county": "LK Rhein-Erft-Kreis",
+            "ags": "05362"
+        },
+        {
+            "name": "Euskirchen",
+            "county": "LK Euskirchen",
+            "ags": "05366"
+        },
+        {
+            "name": "Heinsberg",
+            "county": "LK Heinsberg",
+            "ags": "05370"
+        },
+        {
+            "name": "Oberbergischer Kreis",
+            "county": "LK Oberbergischer Kreis",
+            "ags": "05374"
+        },
+        {
+            "name": "Rheinisch-Bergischer Kreis",
+            "county": "LK Rheinisch-Bergischer Kreis",
+            "ags": "05378"
+        },
+        {
+            "name": "Rhein-Sieg-Kreis",
+            "county": "LK Rhein-Sieg-Kreis",
+            "ags": "05382"
+        },
+        {
+            "name": "Bottrop",
+            "county": "SK Bottrop",
+            "ags": "05512"
+        },
+        {
+            "name": "Gelsenkirchen",
+            "county": "SK Gelsenkirchen",
+            "ags": "05513"
+        },
+        {
+            "name": "Münster",
+            "county": "SK Münster",
+            "ags": "05515"
+        },
+        {
+            "name": "Borken",
+            "county": "LK Borken",
+            "ags": "05554"
+        },
+        {
+            "name": "Coesfeld",
+            "county": "LK Coesfeld",
+            "ags": "05558"
+        },
+        {
+            "name": "Recklinghausen",
+            "county": "LK Recklinghausen",
+            "ags": "05562"
+        },
+        {
+            "name": "Steinfurt",
+            "county": "LK Steinfurt",
+            "ags": "05566"
+        },
+        {
+            "name": "Warendorf",
+            "county": "LK Warendorf",
+            "ags": "05570"
+        },
+        {
+            "name": "Bielefeld",
+            "county": "SK Bielefeld",
+            "ags": "05711"
+        },
+        {
+            "name": "Gütersloh",
+            "county": "LK Gütersloh",
+            "ags": "05754"
+        },
+        {
+            "name": "Herford",
+            "county": "LK Herford",
+            "ags": "05758"
+        },
+        {
+            "name": "Höxter",
+            "county": "LK Höxter",
+            "ags": "05762"
+        },
+        {
+            "name": "Lippe",
+            "county": "LK Lippe",
+            "ags": "05766"
+        },
+        {
+            "name": "Minden-Lübbecke",
+            "county": "LK Minden-Lübbecke",
+            "ags": "05770"
+        },
+        {
+            "name": "Paderborn",
+            "county": "LK Paderborn",
+            "ags": "05774"
+        },
+        {
+            "name": "Bochum",
+            "county": "SK Bochum",
+            "ags": "05911"
+        },
+        {
+            "name": "Dortmund",
+            "county": "SK Dortmund",
+            "ags": "05913"
+        },
+        {
+            "name": "Hagen",
+            "county": "SK Hagen",
+            "ags": "05914"
+        },
+        {
+            "name": "Hamm",
+            "county": "SK Hamm",
+            "ags": "05915"
+        },
+        {
+            "name": "Herne",
+            "county": "SK Herne",
+            "ags": "05916"
+        },
+        {
+            "name": "Ennepe-Ruhr-Kreis",
+            "county": "LK Ennepe-Ruhr-Kreis",
+            "ags": "05954"
+        },
+        {
+            "name": "Hochsauerlandkreis",
+            "county": "LK Hochsauerlandkreis",
+            "ags": "05958"
+        },
+        {
+            "name": "Märkischer Kreis",
+            "county": "LK Märkischer Kreis",
+            "ags": "05962"
+        },
+        {
+            "name": "Olpe",
+            "county": "LK Olpe",
+            "ags": "05966"
+        },
+        {
+            "name": "Siegen-Wittgenstein",
+            "county": "LK Siegen-Wittgenstein",
+            "ags": "05970"
+        },
+        {
+            "name": "Soest",
+            "county": "LK Soest",
+            "ags": "05974"
+        },
+        {
+            "name": "Unna",
+            "county": "LK Unna",
+            "ags": "05978"
+        },
+        {
+            "name": "Darmstadt",
+            "county": "SK Darmstadt",
+            "ags": "06411"
+        },
+        {
+            "name": "Frankfurt am Main",
+            "county": "SK Frankfurt am Main",
+            "ags": "06412"
+        },
+        {
+            "name": "Offenbach am Main",
+            "county": "SK Offenbach",
+            "ags": "06413"
+        },
+        {
+            "name": "Wiesbaden",
+            "county": "SK Wiesbaden",
+            "ags": "06414"
+        },
+        {
+            "name": "Bergstraße",
+            "county": "LK Bergstraße",
+            "ags": "06431"
+        },
+        {
+            "name": "Darmstadt-Dieburg",
+            "county": "LK Darmstadt-Dieburg",
+            "ags": "06432"
+        },
+        {
+            "name": "Groß-Gerau",
+            "county": "LK Groß-Gerau",
+            "ags": "06433"
+        },
+        {
+            "name": "Hochtaunuskreis",
+            "county": "LK Hochtaunuskreis",
+            "ags": "06434"
+        },
+        {
+            "name": "Main-Kinzig-Kreis",
+            "county": "LK Main-Kinzig-Kreis",
+            "ags": "06435"
+        },
+        {
+            "name": "Main-Taunus-Kreis",
+            "county": "LK Main-Taunus-Kreis",
+            "ags": "06436"
+        },
+        {
+            "name": "Odenwaldkreis",
+            "county": "LK Odenwaldkreis",
+            "ags": "06437"
+        },
+        {
+            "name": "Offenbach",
+            "county": "LK Offenbach",
+            "ags": "06438"
+        },
+        {
+            "name": "Rheingau-Taunus-Kreis",
+            "county": "LK Rheingau-Taunus-Kreis",
+            "ags": "06439"
+        },
+        {
+            "name": "Wetteraukreis",
+            "county": "LK Wetteraukreis",
+            "ags": "06440"
+        },
+        {
+            "name": "Gießen",
+            "county": "LK Gießen",
+            "ags": "06531"
+        },
+        {
+            "name": "Lahn-Dill-Kreis",
+            "county": "LK Lahn-Dill-Kreis",
+            "ags": "06532"
+        },
+        {
+            "name": "Limburg-Weilburg",
+            "county": "LK Limburg-Weilburg",
+            "ags": "06533"
+        },
+        {
+            "name": "Marburg-Biedenkopf",
+            "county": "LK Marburg-Biedenkopf",
+            "ags": "06534"
+        },
+        {
+            "name": "Vogelsbergkreis",
+            "county": "LK Vogelsbergkreis",
+            "ags": "06535"
+        },
+        {
+            "name": "Kassel",
+            "county": "SK Kassel",
+            "ags": "06611"
+        },
+        {
+            "name": "Fulda",
+            "county": "LK Fulda",
+            "ags": "06631"
+        },
+        {
+            "name": "Hersfeld-Rotenburg",
+            "county": "LK Hersfeld-Rotenburg",
+            "ags": "06632"
+        },
+        {
+            "name": "Kassel",
+            "county": "LK Kassel",
+            "ags": "06633"
+        },
+        {
+            "name": "Schwalm-Eder-Kreis",
+            "county": "LK Schwalm-Eder-Kreis",
+            "ags": "06634"
+        },
+        {
+            "name": "Waldeck-Frankenberg",
+            "county": "LK Waldeck-Frankenberg",
+            "ags": "06635"
+        },
+        {
+            "name": "Werra-Meißner-Kreis",
+            "county": "LK Werra-Meißner-Kreis",
+            "ags": "06636"
+        },
+        {
+            "name": "Koblenz",
+            "county": "SK Koblenz",
+            "ags": "07111"
+        },
+        {
+            "name": "Ahrweiler",
+            "county": "LK Ahrweiler",
+            "ags": "07131"
+        },
+        {
+            "name": "Altenkirchen (Westerwald)",
+            "county": "LK Altenkirchen",
+            "ags": "07132"
+        },
+        {
+            "name": "Bad Kreuznach",
+            "county": "LK Bad Kreuznach",
+            "ags": "07133"
+        },
+        {
+            "name": "Birkenfeld",
+            "county": "LK Birkenfeld",
+            "ags": "07134"
+        },
+        {
+            "name": "Cochem-Zell",
+            "county": "LK Cochem-Zell",
+            "ags": "07135"
+        },
+        {
+            "name": "Mayen-Koblenz",
+            "county": "LK Mayen-Koblenz",
+            "ags": "07137"
+        },
+        {
+            "name": "Neuwied",
+            "county": "LK Neuwied",
+            "ags": "07138"
+        },
+        {
+            "name": "Rhein-Hunsrück-Kreis",
+            "county": "LK Rhein-Hunsrück-Kreis",
+            "ags": "07140"
+        },
+        {
+            "name": "Rhein-Lahn-Kreis",
+            "county": "LK Rhein-Lahn-Kreis",
+            "ags": "07141"
+        },
+        {
+            "name": "Westerwaldkreis",
+            "county": "LK Westerwaldkreis",
+            "ags": "07143"
+        },
+        {
+            "name": "Trier",
+            "county": "SK Trier",
+            "ags": "07211"
+        },
+        {
+            "name": "Bernkastel-Wittlich",
+            "county": "LK Bernkastel-Wittlich",
+            "ags": "07231"
+        },
+        {
+            "name": "Eifelkreis Bitburg-Prüm",
+            "county": "LK Bitburg-Prüm",
+            "ags": "07232"
+        },
+        {
+            "name": "Vulkaneifel",
+            "county": "LK Vulkaneifel",
+            "ags": "07233"
+        },
+        {
+            "name": "Trier-Saarburg",
+            "county": "LK Trier-Saarburg",
+            "ags": "07235"
+        },
+        {
+            "name": "Frankenthal (Pfalz)",
+            "county": "SK Frankenthal",
+            "ags": "07311"
+        },
+        {
+            "name": "Kaiserslautern",
+            "county": "SK Kaiserslautern",
+            "ags": "07312"
+        },
+        {
+            "name": "Landau in der Pfalz",
+            "county": "SK Landau i.d.Pfalz",
+            "ags": "07313"
+        },
+        {
+            "name": "Ludwigshafen am Rhein",
+            "county": "SK Ludwigshafen",
+            "ags": "07314"
+        },
+        {
+            "name": "Mainz",
+            "county": "SK Mainz",
+            "ags": "07315"
+        },
+        {
+            "name": "Neustadt an der Weinstraße",
+            "county": "SK Neustadt a.d.Weinstraße",
+            "ags": "07316"
+        },
+        {
+            "name": "Pirmasens",
+            "county": "SK Pirmasens",
+            "ags": "07317"
+        },
+        {
+            "name": "Speyer",
+            "county": "SK Speyer",
+            "ags": "07318"
+        },
+        {
+            "name": "Worms",
+            "county": "SK Worms",
+            "ags": "07319"
+        },
+        {
+            "name": "Zweibrücken",
+            "county": "SK Zweibrücken",
+            "ags": "07320"
+        },
+        {
+            "name": "Alzey-Worms",
+            "county": "LK Alzey-Worms",
+            "ags": "07331"
+        },
+        {
+            "name": "Bad Dürkheim",
+            "county": "LK Bad Dürkheim",
+            "ags": "07332"
+        },
+        {
+            "name": "Donnersbergkreis",
+            "county": "LK Donnersbergkreis",
+            "ags": "07333"
+        },
+        {
+            "name": "Germersheim",
+            "county": "LK Germersheim",
+            "ags": "07334"
+        },
+        {
+            "name": "Kaiserslautern",
+            "county": "LK Kaiserslautern",
+            "ags": "07335"
+        },
+        {
+            "name": "Kusel",
+            "county": "LK Kusel",
+            "ags": "07336"
+        },
+        {
+            "name": "Südliche Weinstraße",
+            "county": "LK Südliche Weinstraße",
+            "ags": "07337"
+        },
+        {
+            "name": "Rhein-Pfalz-Kreis",
+            "county": "LK Rhein-Pfalz-Kreis",
+            "ags": "07338"
+        },
+        {
+            "name": "Mainz-Bingen",
+            "county": "LK Mainz-Bingen",
+            "ags": "07339"
+        },
+        {
+            "name": "Südwestpfalz",
+            "county": "LK Südwestpfalz",
+            "ags": "07340"
+        },
+        {
+            "name": "Stuttgart",
+            "county": "SK Stuttgart",
+            "ags": "08111"
+        },
+        {
+            "name": "Böblingen",
+            "county": "LK Böblingen",
+            "ags": "08115"
+        },
+        {
+            "name": "Esslingen",
+            "county": "LK Esslingen",
+            "ags": "08116"
+        },
+        {
+            "name": "Göppingen",
+            "county": "LK Göppingen",
+            "ags": "08117"
+        },
+        {
+            "name": "Ludwigsburg",
+            "county": "LK Ludwigsburg",
+            "ags": "08118"
+        },
+        {
+            "name": "Rems-Murr-Kreis",
+            "county": "LK Rems-Murr-Kreis",
+            "ags": "08119"
+        },
+        {
+            "name": "Heilbronn",
+            "county": "SK Heilbronn",
+            "ags": "08121"
+        },
+        {
+            "name": "Heilbronn",
+            "county": "LK Heilbronn",
+            "ags": "08125"
+        },
+        {
+            "name": "Hohenlohekreis",
+            "county": "LK Hohenlohekreis",
+            "ags": "08126"
+        },
+        {
+            "name": "Schwäbisch Hall",
+            "county": "LK Schwäbisch Hall",
+            "ags": "08127"
+        },
+        {
+            "name": "Main-Tauber-Kreis",
+            "county": "LK Main-Tauber-Kreis",
+            "ags": "08128"
+        },
+        {
+            "name": "Heidenheim",
+            "county": "LK Heidenheim",
+            "ags": "08135"
+        },
+        {
+            "name": "Ostalbkreis",
+            "county": "LK Ostalbkreis",
+            "ags": "08136"
+        },
+        {
+            "name": "Baden-Baden",
+            "county": "SK Baden-Baden",
+            "ags": "08211"
+        },
+        {
+            "name": "Karlsruhe",
+            "county": "SK Karlsruhe",
+            "ags": "08212"
+        },
+        {
+            "name": "Karlsruhe",
+            "county": "LK Karlsruhe",
+            "ags": "08215"
+        },
+        {
+            "name": "Rastatt",
+            "county": "LK Rastatt",
+            "ags": "08216"
+        },
+        {
+            "name": "Heidelberg",
+            "county": "SK Heidelberg",
+            "ags": "08221"
+        },
+        {
+            "name": "Mannheim",
+            "county": "SK Mannheim",
+            "ags": "08222"
+        },
+        {
+            "name": "Neckar-Odenwald-Kreis",
+            "county": "LK Neckar-Odenwald-Kreis",
+            "ags": "08225"
+        },
+        {
+            "name": "Rhein-Neckar-Kreis",
+            "county": "LK Rhein-Neckar-Kreis",
+            "ags": "08226"
+        },
+        {
+            "name": "Pforzheim",
+            "county": "SK Pforzheim",
+            "ags": "08231"
+        },
+        {
+            "name": "Calw",
+            "county": "LK Calw",
+            "ags": "08235"
+        },
+        {
+            "name": "Enzkreis",
+            "county": "LK Enzkreis",
+            "ags": "08236"
+        },
+        {
+            "name": "Freudenstadt",
+            "county": "LK Freudenstadt",
+            "ags": "08237"
+        },
+        {
+            "name": "Freiburg im Breisgau",
+            "county": "SK Freiburg i.Breisgau",
+            "ags": "08311"
+        },
+        {
+            "name": "Breisgau-Hochschwarzwald",
+            "county": "LK Breisgau-Hochschwarzwald",
+            "ags": "08315"
+        },
+        {
+            "name": "Emmendingen",
+            "county": "LK Emmendingen",
+            "ags": "08316"
+        },
+        {
+            "name": "Ortenaukreis",
+            "county": "LK Ortenaukreis",
+            "ags": "08317"
+        },
+        {
+            "name": "Rottweil",
+            "county": "LK Rottweil",
+            "ags": "08325"
+        },
+        {
+            "name": "Schwarzwald-Baar-Kreis",
+            "county": "LK Schwarzwald-Baar-Kreis",
+            "ags": "08326"
+        },
+        {
+            "name": "Tuttlingen",
+            "county": "LK Tuttlingen",
+            "ags": "08327"
+        },
+        {
+            "name": "Konstanz",
+            "county": "LK Konstanz",
+            "ags": "08335"
+        },
+        {
+            "name": "Lörrach",
+            "county": "LK Lörrach",
+            "ags": "08336"
+        },
+        {
+            "name": "Waldshut",
+            "county": "LK Waldshut",
+            "ags": "08337"
+        },
+        {
+            "name": "Reutlingen",
+            "county": "LK Reutlingen",
+            "ags": "08415"
+        },
+        {
+            "name": "Tübingen",
+            "county": "LK Tübingen",
+            "ags": "08416"
+        },
+        {
+            "name": "Zollernalbkreis",
+            "county": "LK Zollernalbkreis",
+            "ags": "08417"
+        },
+        {
+            "name": "Ulm",
+            "county": "SK Ulm",
+            "ags": "08421"
+        },
+        {
+            "name": "Alb-Donau-Kreis",
+            "county": "LK Alb-Donau-Kreis",
+            "ags": "08425"
+        },
+        {
+            "name": "Biberach",
+            "county": "LK Biberach",
+            "ags": "08426"
+        },
+        {
+            "name": "Bodenseekreis",
+            "county": "LK Bodenseekreis",
+            "ags": "08435"
+        },
+        {
+            "name": "Ravensburg",
+            "county": "LK Ravensburg",
+            "ags": "08436"
+        },
+        {
+            "name": "Sigmaringen",
+            "county": "LK Sigmaringen",
+            "ags": "08437"
+        },
+        {
+            "name": "Ingolstadt",
+            "county": "SK Ingolstadt",
+            "ags": "09161"
+        },
+        {
+            "name": "München",
+            "county": "SK München",
+            "ags": "09162"
+        },
+        {
+            "name": "Rosenheim",
+            "county": "SK Rosenheim",
+            "ags": "09163"
+        },
+        {
+            "name": "Altötting",
+            "county": "LK Altötting",
+            "ags": "09171"
+        },
+        {
+            "name": "Berchtesgadener Land",
+            "county": "LK Berchtesgadener Land",
+            "ags": "09172"
+        },
+        {
+            "name": "Bad Tölz-Wolfratshausen",
+            "county": "LK Bad Tölz-Wolfratshausen",
+            "ags": "09173"
+        },
+        {
+            "name": "Dachau",
+            "county": "LK Dachau",
+            "ags": "09174"
+        },
+        {
+            "name": "Ebersberg",
+            "county": "LK Ebersberg",
+            "ags": "09175"
+        },
+        {
+            "name": "Eichstätt",
+            "county": "LK Eichstätt",
+            "ags": "09176"
+        },
+        {
+            "name": "Erding",
+            "county": "LK Erding",
+            "ags": "09177"
+        },
+        {
+            "name": "Freising",
+            "county": "LK Freising",
+            "ags": "09178"
+        },
+        {
+            "name": "Fürstenfeldbruck",
+            "county": "LK Fürstenfeldbruck",
+            "ags": "09179"
+        },
+        {
+            "name": "Garmisch-Partenkirchen",
+            "county": "LK Garmisch-Partenkirchen",
+            "ags": "09180"
+        },
+        {
+            "name": "Landsberg am Lech",
+            "county": "LK Landsberg a.Lech",
+            "ags": "09181"
+        },
+        {
+            "name": "Miesbach",
+            "county": "LK Miesbach",
+            "ags": "09182"
+        },
+        {
+            "name": "Mühldorf a. Inn",
+            "county": "LK Mühldorf a.Inn",
+            "ags": "09183"
+        },
+        {
+            "name": "München",
+            "county": "LK München",
+            "ags": "09184"
+        },
+        {
+            "name": "Neuburg-Schrobenhausen",
+            "county": "LK Neuburg-Schrobenhausen",
+            "ags": "09185"
+        },
+        {
+            "name": "Pfaffenhofen a.d. Ilm",
+            "county": "LK Pfaffenhofen a.d.Ilm",
+            "ags": "09186"
+        },
+        {
+            "name": "Rosenheim",
+            "county": "LK Rosenheim",
+            "ags": "09187"
+        },
+        {
+            "name": "Starnberg",
+            "county": "LK Starnberg",
+            "ags": "09188"
+        },
+        {
+            "name": "Traunstein",
+            "county": "LK Traunstein",
+            "ags": "09189"
+        },
+        {
+            "name": "Weilheim-Schongau",
+            "county": "LK Weilheim-Schongau",
+            "ags": "09190"
+        },
+        {
+            "name": "Landshut",
+            "county": "SK Landshut",
+            "ags": "09261"
+        },
+        {
+            "name": "Passau",
+            "county": "SK Passau",
+            "ags": "09262"
+        },
+        {
+            "name": "Straubing",
+            "county": "SK Straubing",
+            "ags": "09263"
+        },
+        {
+            "name": "Deggendorf",
+            "county": "LK Deggendorf",
+            "ags": "09271"
+        },
+        {
+            "name": "Freyung-Grafenau",
+            "county": "LK Freyung-Grafenau",
+            "ags": "09272"
+        },
+        {
+            "name": "Kelheim",
+            "county": "LK Kelheim",
+            "ags": "09273"
+        },
+        {
+            "name": "Landshut",
+            "county": "LK Landshut",
+            "ags": "09274"
+        },
+        {
+            "name": "Passau",
+            "county": "LK Passau",
+            "ags": "09275"
+        },
+        {
+            "name": "Regen",
+            "county": "LK Regen",
+            "ags": "09276"
+        },
+        {
+            "name": "Rottal-Inn",
+            "county": "LK Rottal-Inn",
+            "ags": "09277"
+        },
+        {
+            "name": "Straubing-Bogen",
+            "county": "LK Straubing-Bogen",
+            "ags": "09278"
+        },
+        {
+            "name": "Dingolfing-Landau",
+            "county": "LK Dingolfing-Landau",
+            "ags": "09279"
+        },
+        {
+            "name": "Amberg",
+            "county": "SK Amberg",
+            "ags": "09361"
+        },
+        {
+            "name": "Regensburg",
+            "county": "SK Regensburg",
+            "ags": "09362"
+        },
+        {
+            "name": "Weiden i.d. OPf.",
+            "county": "SK Weiden i.d.OPf.",
+            "ags": "09363"
+        },
+        {
+            "name": "Amberg-Sulzbach",
+            "county": "LK Amberg-Sulzbach",
+            "ags": "09371"
+        },
+        {
+            "name": "Cham",
+            "county": "LK Cham",
+            "ags": "09372"
+        },
+        {
+            "name": "Neumarkt i.d. OPf.",
+            "county": "LK Neumarkt i.d.OPf.",
+            "ags": "09373"
+        },
+        {
+            "name": "Neustadt a.d. Waldnaab",
+            "county": "LK Neustadt a.d.Waldnaab",
+            "ags": "09374"
+        },
+        {
+            "name": "Regensburg",
+            "county": "LK Regensburg",
+            "ags": "09375"
+        },
+        {
+            "name": "Schwandorf",
+            "county": "LK Schwandorf",
+            "ags": "09376"
+        },
+        {
+            "name": "Tirschenreuth",
+            "county": "LK Tirschenreuth",
+            "ags": "09377"
+        },
+        {
+            "name": "Bamberg",
+            "county": "SK Bamberg",
+            "ags": "09461"
+        },
+        {
+            "name": "Bayreuth",
+            "county": "SK Bayreuth",
+            "ags": "09462"
+        },
+        {
+            "name": "Coburg",
+            "county": "SK Coburg",
+            "ags": "09463"
+        },
+        {
+            "name": "Hof",
+            "county": "SK Hof",
+            "ags": "09464"
+        },
+        {
+            "name": "Bamberg",
+            "county": "LK Bamberg",
+            "ags": "09471"
+        },
+        {
+            "name": "Bayreuth",
+            "county": "LK Bayreuth",
+            "ags": "09472"
+        },
+        {
+            "name": "Coburg",
+            "county": "LK Coburg",
+            "ags": "09473"
+        },
+        {
+            "name": "Forchheim",
+            "county": "LK Forchheim",
+            "ags": "09474"
+        },
+        {
+            "name": "Hof",
+            "county": "LK Hof",
+            "ags": "09475"
+        },
+        {
+            "name": "Kronach",
+            "county": "LK Kronach",
+            "ags": "09476"
+        },
+        {
+            "name": "Kulmbach",
+            "county": "LK Kulmbach",
+            "ags": "09477"
+        },
+        {
+            "name": "Lichtenfels",
+            "county": "LK Lichtenfels",
+            "ags": "09478"
+        },
+        {
+            "name": "Wunsiedel i. Fichtelgebirge",
+            "county": "LK Wunsiedel i.Fichtelgebirge",
+            "ags": "09479"
+        },
+        {
+            "name": "Ansbach",
+            "county": "SK Ansbach",
+            "ags": "09561"
+        },
+        {
+            "name": "Erlangen",
+            "county": "SK Erlangen",
+            "ags": "09562"
+        },
+        {
+            "name": "Fürth",
+            "county": "SK Fürth",
+            "ags": "09563"
+        },
+        {
+            "name": "Nürnberg",
+            "county": "SK Nürnberg",
+            "ags": "09564"
+        },
+        {
+            "name": "Schwabach",
+            "county": "SK Schwabach",
+            "ags": "09565"
+        },
+        {
+            "name": "Ansbach",
+            "county": "LK Ansbach",
+            "ags": "09571"
+        },
+        {
+            "name": "Erlangen-Höchstadt",
+            "county": "LK Erlangen-Höchstadt",
+            "ags": "09572"
+        },
+        {
+            "name": "Fürth",
+            "county": "LK Fürth",
+            "ags": "09573"
+        },
+        {
+            "name": "Nürnberger Land",
+            "county": "LK Nürnberger Land",
+            "ags": "09574"
+        },
+        {
+            "name": "Neustadt a.d. Aisch-Bad Windsheim",
+            "county": "LK Neustadt a.d.Aisch-Bad Windsheim",
+            "ags": "09575"
+        },
+        {
+            "name": "Roth",
+            "county": "LK Roth",
+            "ags": "09576"
+        },
+        {
+            "name": "Weißenburg-Gunzenhausen",
+            "county": "LK Weißenburg-Gunzenhausen",
+            "ags": "09577"
+        },
+        {
+            "name": "Aschaffenburg",
+            "county": "SK Aschaffenburg",
+            "ags": "09661"
+        },
+        {
+            "name": "Schweinfurt",
+            "county": "SK Schweinfurt",
+            "ags": "09662"
+        },
+        {
+            "name": "Würzburg",
+            "county": "SK Würzburg",
+            "ags": "09663"
+        },
+        {
+            "name": "Aschaffenburg",
+            "county": "LK Aschaffenburg",
+            "ags": "09671"
+        },
+        {
+            "name": "Bad Kissingen",
+            "county": "LK Bad Kissingen",
+            "ags": "09672"
+        },
+        {
+            "name": "Rhön-Grabfeld",
+            "county": "LK Rhön-Grabfeld",
+            "ags": "09673"
+        },
+        {
+            "name": "Haßberge",
+            "county": "LK Haßberge",
+            "ags": "09674"
+        },
+        {
+            "name": "Kitzingen",
+            "county": "LK Kitzingen",
+            "ags": "09675"
+        },
+        {
+            "name": "Miltenberg",
+            "county": "LK Miltenberg",
+            "ags": "09676"
+        },
+        {
+            "name": "Main-Spessart",
+            "county": "LK Main-Spessart",
+            "ags": "09677"
+        },
+        {
+            "name": "Schweinfurt",
+            "county": "LK Schweinfurt",
+            "ags": "09678"
+        },
+        {
+            "name": "Würzburg",
+            "county": "LK Würzburg",
+            "ags": "09679"
+        },
+        {
+            "name": "Augsburg",
+            "county": "SK Augsburg",
+            "ags": "09761"
+        },
+        {
+            "name": "Kaufbeuren",
+            "county": "SK Kaufbeuren",
+            "ags": "09762"
+        },
+        {
+            "name": "Kempten (Allgäu)",
+            "county": "SK Kempten",
+            "ags": "09763"
+        },
+        {
+            "name": "Memmingen",
+            "county": "SK Memmingen",
+            "ags": "09764"
+        },
+        {
+            "name": "Aichach-Friedberg",
+            "county": "LK Aichach-Friedberg",
+            "ags": "09771"
+        },
+        {
+            "name": "Augsburg",
+            "county": "LK Augsburg",
+            "ags": "09772"
+        },
+        {
+            "name": "Dillingen a.d. Donau",
+            "county": "LK Dillingen a.d.Donau",
+            "ags": "09773"
+        },
+        {
+            "name": "Günzburg",
+            "county": "LK Günzburg",
+            "ags": "09774"
+        },
+        {
+            "name": "Neu-Ulm",
+            "county": "LK Neu-Ulm",
+            "ags": "09775"
+        },
+        {
+            "name": "Lindau (Bodensee)",
+            "county": "LK Lindau",
+            "ags": "09776"
+        },
+        {
+            "name": "Ostallgäu",
+            "county": "LK Ostallgäu",
+            "ags": "09777"
+        },
+        {
+            "name": "Unterallgäu",
+            "county": "LK Unterallgäu",
+            "ags": "09778"
+        },
+        {
+            "name": "Donau-Ries",
+            "county": "LK Donau-Ries",
+            "ags": "09779"
+        },
+        {
+            "name": "Oberallgäu",
+            "county": "LK Oberallgäu",
+            "ags": "09780"
+        }
+    ]
+}

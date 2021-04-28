@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+
+:root {
+  --mainFont: 'Lora', serif;
+  --contentFont: 'Montserrat', sans-serif;
+  --primary: #6D7B8C;
+  --secondary: #465973;
+  --background: #E9ECF0;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,7 +21,120 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.mainContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoContainer {
+  width: 30%;
+  height: 30%;
+  background-color: var(--primary);
+}
+
+.searchContainer {
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.inputContainer {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+}
+
+input.searchbar {
+  border: 2px solid var(--primary);
+  border-right: 1px solid var(--primary);
+  height: 3vh; 
+  flex-grow: 1;
+  border-radius: 12px 0 0 12px;
+  background-color: var(--background);
+
+  color: var(--primary);
+  font-family: var(--mainFont);
+  font-size: 2vh;
+  text-align: center;
+}
+
+/* Remove Number Arrows */
+/* Chrome, Safari, Edge, Opera */
+input.searchbar::-webkit-outer-spin-button,
+input.searchbar::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input.searchbar[type=number] {
+  -moz-appearance: textfield;
+}
+
+input.searchbar:focus {
+  outline: none;
+}
+
+button.searchbar {
+  border: 2px solid var(--primary);
+  border-left: 1px solid var(--primary);
+  border-radius: 0 12px 12px 0;
+  color: var(--primary);
+  font-family: var(--mainFont);
+  font-size: 2vh;
+  background-color: var(--primary);
+}
+
+.mainContentWrapper {
+  background-color: var(--background);
+}
+
+.contentContainer {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.plotWrapper {
+  width: 100%;
+  height: 40vh;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.plotContainer {
+  width: 70vw;
+  height: 100%;
+}
+
+p.mainHeader {
+  font-family: var(--mainFont);
+  color: var(--primary);
+  font-size: 3vh;
+}
+
+p.districtDay, p.districtDayHeader {
+  font-family: var(--mainFont);
+  color: var(--secondary)
+}
+
+p.districtDayHeader {
+  font-size: 3vh;
+}
+
+.recharts-legend-item, .recharts-tooltip-label 
+{
+  font-family: var(--mainFont); 
 }
