@@ -12,7 +12,7 @@ import {agsMap} from './agsMap.js'
 
 // Import Victory
 import { VictoryChart, VictoryGroup, VictoryBar } from 'victory'
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
 
 
 class App extends React.Component {
@@ -56,10 +56,17 @@ class App extends React.Component {
 
 
       dataMeta: null,
+
+      // User Selection
+      scope: "district",
+      days: 30
     };
 
     this.handleChangeZipCode = this.handleChangeZipCode.bind(this);
     this.handleSearchButton = this.handleSearchButton.bind(this);
+
+    this.handleScopeToggle = this.handleScopeToggle.bind(this);
+    this.handleDaysToggle = this.handleDaysToggle.bind(this);
   }
 
   handleChangeZipCode(e) {
@@ -76,6 +83,29 @@ class App extends React.Component {
     this.setState({ags: ags})
 
     this.fetchApi(ags);
+  }
+
+  handleScopeToggle() {
+    if (this.state.scope == "district") {
+      this.setState({scope: "country"});
+    }
+    else {
+      this.setState({scope: "district"})
+    }
+  }
+
+  handleDaysToggle() {
+    var currentDaysValue = this.state.days;
+    
+    if (currentDaysValue == 7) {
+      this.setState({days: 30});
+    }
+    else if (currentDaysValue == 30) {
+      this.setState({days: 365});
+    }
+    else {
+      this.setState({days: 7});
+    }
   }
 
   fetchApi(ags) {
@@ -99,7 +129,7 @@ class App extends React.Component {
     )
 
     // District Month Cases
-    fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/cases/30")
+    fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/cases/365")
     .then(res => res.json())
     .then(
       (result) => {
@@ -117,7 +147,7 @@ class App extends React.Component {
     )
 
     // District Month Recovered
-    fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/recovered/30")
+    fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/recovered/365")
     .then(res => res.json())
     .then(
       (result) => {
@@ -135,7 +165,7 @@ class App extends React.Component {
     )
 
     // District Month Deaths
-    fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/deaths/30")
+    fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/deaths/365")
     .then(res => res.json())
     .then(
       (result) => {
@@ -153,7 +183,7 @@ class App extends React.Component {
     )
 
     // District Month Incidence
-    fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/incidence/30")
+    fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/incidence/365")
     .then(res => res.json())
     .then(
       (result) => {
@@ -192,23 +222,6 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-
-          <p>apiFetched: {this.state.apiFetched_District_Day.toString()}</p>
-          <p>apiError: {this.state.apiError_District_Day != null ? this.state.apiError_District_Day.toString() : "false"}</p>
-          {
-            this.state.searched ? 
-            <p>User searched for {this.state.zip}; City: {agsMap["agsData"][this.state.zip]["ort"]}; AGS: {agsMap["agsData"][this.state.zip]["ags"]}</p>
-            :
-            null
-          }
-          {
-            (this.state.apiFetched && this.state.apiError == null) ? 
-              <p>Aktive Fälle in {this.state.data_District_Day[this.state.ags]["name"]}: {this.state.data_District_Day[this.state.ags]["cases"]}</p>
-              // console.log(this.state.ags)
-            :
-            null
-          }
-
         </div>
         {
           this.state.apiFetchCompleted ?
@@ -219,6 +232,11 @@ class App extends React.Component {
             districtMonthRecovered = {this.state.data_District_Month_Recovered != null ? this.state.data_District_Month_Recovered[this.state.ags]["history"] : null}
             districtMonthDeaths = {this.state.data_District_Month_Deaths != null ? this.state.data_District_Month_Deaths[this.state.ags]["history"] : null}
             districtMonthIncidence = {this.state.data_District_Month_Incidence != null ? this.state.data_District_Month_Incidence[this.state.ags]["history"] : null}
+
+            scope = {this.state.scope}
+            days = {this.state.days}
+            handleScopeToggle = {this.handleScopeToggle}
+            handleDaysToggle = {this.handleDaysToggle} 
           />
 
           :
@@ -236,18 +254,29 @@ class MainContent extends React.Component {
   constructor(props){
     super(props);
     this.state = {}
+
+    this.handleScopeToggle = this.handleScopeToggle.bind(this);
+    this.handleDaysToggle = this.handleDaysToggle.bind(this);
+  }
+
+  handleScopeToggle() {
+    this.props.handleScopeToggle();
+  }
+
+  handleDaysToggle() {
+    this.props.handleDaysToggle();
   }
 
   render() {
     return (
       <div className="mainContentWrapper">
         {this.props.districtDay != null ?
-          <DistrictDay districtName={this.props.districtName} data={this.props.districtDay}/>
+          <DistrictDay scope = {this.props.scope} handleScopeToggle={this.handleScopeToggle} districtName={this.props.districtName} data={this.props.districtDay}/>
           :
           null
         }
-        {this.props.districtMonthCases != null && this.props.districtMonthRecovered != null && this.props.districtMonthDeaths != null && this.props.districtMonthIncidence?
-          <DistrictMonth districtName={this.props.districtName} cases = {this.props.districtMonthCases} recovered = {this.props.districtMonthRecovered} deaths = {this.props.districtMonthDeaths} incidence = {this.props.districtMonthIncidence}/>
+        {this.props.districtMonthCases != null && this.props.districtMonthRecovered != null && this.props.districtMonthDeaths != null && this.props.districtMonthIncidence && this.props.districtDay != null ?
+          <DistrictMonth districtName={this.props.districtName} dataDay={this.props.districtDay} scope = {this.props.scope} handleScopeToggle={this.handleScopeToggle} days = {this.props.days} handleDaysToggle={this.handleDaysToggle} cases = {this.props.districtMonthCases} recovered = {this.props.districtMonthRecovered} deaths = {this.props.districtMonthDeaths} incidence = {this.props.districtMonthIncidence}/>
           :
           null
         }
@@ -261,12 +290,18 @@ class DistrictDay extends React.Component {
   constructor(props){
     super(props);
     this.state = {}
+
+    this.handleScopeToggle = this.handleScopeToggle.bind(this);
+  }
+
+  handleScopeToggle() {
+    this.props.handleScopeToggle();
   }
 
   render() {
     return (
       <div className="contentContainer">
-        <p className="districtDayHeader">Übersicht der heutigen Zahlen für: {this.props.districtName}</p>
+        <p className="districtDayHeader">Übersicht der heutigen Zahlen für <button className="toggleButton" onClick={this.handleScopeToggle}>{this.props.scope == "district" ? this.props.districtName : "Deuschland"}</button></p>
         <p className="districtDay">Fälle: {this.props.data["cases"]}</p>
         <p className="districtDay">Genesen: {this.props.data["recovered"]}</p>
         <p className="districtDay">Todesfälle: {this.props.data["deaths"]}</p>
@@ -281,23 +316,94 @@ class DistrictMonth extends React.Component {
   constructor(props){
     super(props);
     this.state = {}
+
+    this.handleScopeToggle = this.handleScopeToggle.bind(this);
+    this.handleDaysToggle = this.handleDaysToggle.bind(this);
   }
 
+  // componentDidMount() {
+  //   // Per Day Statistics
+  //   var data = []
+
+  //   this.props.cases.map((d, index) => {
+  //     var element = {}
+
+  //     var dateDay = this.props.cases[index]["date"].substring(8,10);
+  //     var dateMonth = this.props.cases[index]["date"].substring(5,7);
+  //     var dateYear = this.props.cases[index]["date"].substring(2,4);
+  //     var dateCorrected = dateDay + "." + dateMonth + "." + dateYear;
+  //     element["datum"] = dateCorrected;
+  //     element["Neue Fälle"] = this.props.cases[index]["cases"];
+  //     element["Genesene Personen"] = this.props.recovered[index]["recovered"];
+  //     element["Todesfälle"] = this.props.deaths[index]["deaths"];
+
+  //     data.push(element);
+  //   })
+  //   this.setState({data: data})
+
+
+  //   // Cumulativ Statistics
+  //   var dataCumulative = []
+  //   var totalCases = this.props.dataDay["cases"];
+  //   var totalRecovered = this.props.dataDay["recovered"];
+  //   var totalDeaths = this.props.dataDay["deaths"];
+  //   var arrayLength = this.props.cases.length - 1;
+
+  //   this.props.cases.map((d, index) => {
+  //     var element = {}
+
+  //     var dateDay = this.props.cases[this.props.cases.length - 1 - index]["date"].substring(8,10);
+  //     var dateMonth = this.props.cases[this.props.cases.length - 1 - index]["date"].substring(5,7);
+  //     var dateYear = this.props.cases[this.props.cases.length - 1 - index]["date"].substring(2,4);
+  //     var dateCorrected = dateDay + "." + dateMonth + "." + dateYear;
+
+  //     element["datum"] = dateCorrected;
+
+  //     element["Fälle"] = totalCases;
+  //     totalCases -= this.props.cases[arrayLength - index]["cases"];
+
+  //     element["Genesene Personen"] = totalRecovered;
+  //     totalRecovered -= this.props.recovered[arrayLength - index]["recovered"];
+
+  //     element["Todesfälle"] = totalDeaths;
+  //     totalDeaths -= this.props.deaths[arrayLength - index]["deaths"];
+
+  //     dataCumulative.push(element)
+  //   })
+
+  //   dataCumulative = dataCumulative.reverse();
+    
+    
+  //   this.setState({dataCumulative: dataCumulative})
+  // }
   componentDidMount() {
+    this.updateData(30)
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.days !== this.props.days) {
+      this.updateData(this.props.days)
+    }
+  }
+
+  updateData(days) {
     // Per Day Statistics
     var data = []
 
-    this.props.cases.map((d, index) => {
+    var cases = this.props.cases.slice(-1* days);
+    var recovered = this.props.recovered.slice(-1* days);
+    var deaths = this.props.deaths.slice(-1* days);
+    cases.map((d, index) => {
       var element = {}
 
-      var dateDay = this.props.cases[index]["date"].substring(8,10);
-      var dateMonth = this.props.cases[index]["date"].substring(5,7);
-      var dateYear = this.props.cases[index]["date"].substring(2,4);
+      var dateDay = cases[index]["date"].substring(8,10);
+      var dateMonth = cases[index]["date"].substring(5,7);
+      var dateYear = cases[index]["date"].substring(2,4);
       var dateCorrected = dateDay + "." + dateMonth + "." + dateYear;
       element["datum"] = dateCorrected;
-      element["Neue Fälle"] = this.props.cases[index]["cases"];
-      element["Genesene Personen"] = this.props.recovered[index]["recovered"];
-      element["Todesfälle"] = this.props.deaths[index]["deaths"];
+      element["Neue Fälle"] = cases[index]["cases"];
+      element["Genesene Personen"] = recovered[index]["recovered"];
+      element["Todesfälle"] = deaths[index]["deaths"];
 
       data.push(element);
     })
@@ -306,53 +412,56 @@ class DistrictMonth extends React.Component {
 
     // Cumulativ Statistics
     var dataCumulative = []
-    var firstElement = true;
-    var totalCases = 5000;
-    var lastCases = 5000;
-    var totalRecovered = 4000;
-    var lastRecovered = 4000;
-    var totalDeaths = 3000;
-    var lastDeaths = 3000;
-    var arrayLength = this.props.cases.length - 1;
-    this.props.cases.map((d, index) => {
+    var totalCases = this.props.dataDay["cases"];
+    var totalRecovered = this.props.dataDay["recovered"];
+    var totalDeaths = this.props.dataDay["deaths"];
+    var arrayLength = cases.length - 1;
+
+    cases.map((d, index) => {
       var element = {}
 
-      var dateDay = this.props.cases[this.props.cases.length - 1 - index]["date"].substring(8,10);
-      var dateMonth = this.props.cases[this.props.cases.length - 1 - index]["date"].substring(5,7);
-      var dateYear = this.props.cases[this.props.cases.length - 1 - index]["date"].substring(2,4);
+      var dateDay = cases[cases.length - 1 - index]["date"].substring(8,10);
+      var dateMonth = cases[cases.length - 1 - index]["date"].substring(5,7);
+      var dateYear = cases[cases.length - 1 - index]["date"].substring(2,4);
       var dateCorrected = dateDay + "." + dateMonth + "." + dateYear;
 
       element["datum"] = dateCorrected;
 
-      element["Neue Fälle"] = totalCases;
-      totalCases -= this.props.cases[arrayLength - index]["cases"];
+      element["Fälle"] = totalCases;
+      totalCases -= cases[arrayLength - index]["cases"];
 
       element["Genesene Personen"] = totalRecovered;
-      totalRecovered -= this.props.recovered[arrayLength - index]["recovered"];
+      totalRecovered -= recovered[arrayLength - index]["recovered"];
 
       element["Todesfälle"] = totalDeaths;
-      totalDeaths -= this.props.deaths[arrayLength - index]["deaths"];
+      totalDeaths -= deaths[arrayLength - index]["deaths"];
 
       dataCumulative.push(element)
     })
 
     dataCumulative = dataCumulative.reverse();
-    console.log(dataCumulative)
+    
+    
+    this.setState({dataCumulative: dataCumulative})
+  }
 
+  handleScopeToggle() {
+    this.props.handleScopeToggle();
+  }
 
-
-
-
+  handleDaysToggle() {
+    this.props.handleDaysToggle();
   }
 
   render() {
     return (
       <div className="contentContainer">
-        <p className="districtDayHeader">Statistiken</p>
+        <p className="districtDayHeader">Statistiken der letzten <button className="toggleButton" onClick={this.handleDaysToggle}>{this.props.days}</button> Tage für <button className="toggleButton" onClick={this.handleScopeToggle}>{this.props.scope == "district" ? this.props.districtName : "Deuschland"}</button></p>
 
         {/* Per Day Statistics */}
         <div className="plotWrapper">
           <div className="plotContainer">
+
             <ResponsiveContainer width="100%" height="100%">
             <BarChart
                 width={"100%"}
@@ -375,10 +484,37 @@ class DistrictMonth extends React.Component {
                 <Bar dataKey="Todesfälle" fill="#202936" />
               </BarChart>
             </ResponsiveContainer>
-          </div>
 
+          </div>
         </div>
 
+        {/* Cumulated Statistics */}
+        <div className="plotWrapper">
+          <div className="plotContainer">
+            <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+                width={"100%"}
+                height={"100%"}
+                data={this.state.dataCumulative}
+                // margin={{
+                //   top: 5,
+                //   right: 30,
+                //   left: 20,
+                //   bottom: 5,
+                // }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="datum" style={{fontFamily: "var(--mainFont)"}}/>
+                <YAxis domain={[0,'dataMax']} style={{fontFamily: "var(--mainFont)"}}/>
+                <Tooltip style={{fontFamily: "var(--mainFont)"}}/>
+                <Legend style={{fontFamily: "var(--mainFont)"}}/>
+                <Line type="monotone" dot={false} dataKey="Fälle" stroke="#465973" />
+                <Line type="monotone" dot={false} dataKey="Genesene Personen" stroke="#6181b0" />
+                <Line type="monotone" dot={false} dataKey="Todesfälle" stroke="#202936" />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
 
 
 

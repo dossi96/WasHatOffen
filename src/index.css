@@ -119,18 +119,25 @@ button.searchbar {
   height: 100%;
 }
 
+button.toggleButton {
+  box-sizing: border-box;
+  border: none;
+  background-color: #c3d5ec;
+  cursor: pointer;
+}
+
 p.mainHeader {
   font-family: var(--mainFont);
   color: var(--primary);
   font-size: 3vh;
 }
 
-p.districtDay, p.districtDayHeader {
+p.districtDay, p.districtDayHeader, button.toggleButton {
   font-family: var(--mainFont);
   color: var(--secondary)
 }
 
-p.districtDayHeader {
+p.districtDayHeader, button.toggleButton {
   font-size: 3vh;
 }
 
