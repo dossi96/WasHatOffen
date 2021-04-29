@@ -32,7 +32,10 @@ class App extends React.Component {
       apiFetched_District_Month_Incidence: false,
 
       apiFetched_Germany_Day: false,
-      apiFetched_Germany_Month: false,
+      apiFetched_Germany_History_Cases: false,
+      apiFetched_Germany_History_Recovered: false,
+      apiFetched_Germany_History_Deaths: false,
+      apiFetched_Germany_History_Incidence: false,
 
       // API Error
       apiError_District_Day: null,
@@ -42,7 +45,10 @@ class App extends React.Component {
       apiError_District_Month_Incidence: null,
       
       apiError_Germany_Day: null,
-      apiError_Germany_Month: null,
+      apiError_Germany_History_Cases: null,
+      apiError_Germany_History_Recovered: null,
+      apiError_Germany_History_Deaths: null,
+      apiError_Germany_History_Incidence: null,
 
       // API Answer
       data_District_Day: null,
@@ -52,7 +58,10 @@ class App extends React.Component {
       data_District_Month_Incidence: null,
 
       data_Germany_Day: null,
-      data_Germany_Month: null,
+      data_Germany_History_Cases: null,
+      data_Germany_History_Recovered: null,
+      data_Germany_History_Deaths: null,
+      data_Germany_History_Incidence: null,
 
 
       dataMeta: null,
@@ -108,6 +117,176 @@ class App extends React.Component {
     }
   }
 
+  // fetchApi(ags) {
+  //   // District Day
+  //   fetch("https://api.corona-zahlen.org/districts/" + ags)
+  //   .then(res => res.json())
+  //   .then(
+  //     (result) => {
+  //       this.setState({
+  //         apiFetched_District_Day: true,
+  //         data_District_Day: result.data,
+  //         dataMeta: result.meta,
+  //       });
+  //     },
+  //     (error) => {
+  //       this.setState({
+  //         apiFetched_District_Day: true,
+  //         apiError_District_Day: error,
+  //       });
+  //     }
+  //   )
+
+  //   // District Month Cases
+  //   fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/cases/365")
+  //   .then(res => res.json())
+  //   .then(
+  //     (result) => {
+  //       this.setState({
+  //         apiFetched_District_Month_Cases: true,
+  //         data_District_Month_Cases: result.data,
+  //       });
+  //     },
+  //     (error) => {
+  //       this.setState({
+  //         apiFetched_District_Month_Cases: true,
+  //         apiError_District_Month_Cases: error,
+  //       });
+  //     }
+  //   )
+
+  //   // District Month Recovered
+  //   fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/recovered/365")
+  //   .then(res => res.json())
+  //   .then(
+  //     (result) => {
+  //       this.setState({
+  //         apiFetched_District_Month_Recovered: true,
+  //         data_District_Month_Recovered: result.data,
+  //       });
+  //     },
+  //     (error) => {
+  //       this.setState({
+  //         apiFetched_District_Month_Recovered: true,
+  //         apiError_District_Month_Recovered: error,
+  //       });
+  //     }
+  //   )
+
+  //   // District Month Deaths
+  //   fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/deaths/365")
+  //   .then(res => res.json())
+  //   .then(
+  //     (result) => {
+  //       this.setState({
+  //         apiFetched_District_Month_Deaths: true,
+  //         data_District_Month_Deaths: result.data,
+  //       });
+  //     },
+  //     (error) => {
+  //       this.setState({
+  //         apiFetched_District_Month_Deaths: true,
+  //         apiError_District_Month_Deaths: error,
+  //       });
+  //     }
+  //   )
+
+  //   // District Month Incidence
+  //   fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/incidence/365")
+  //   .then(res => res.json())
+  //   .then(
+  //     (result) => {
+  //       this.setState({
+  //         apiFetched_District_Month_Incidence: true,
+  //         data_District_Month_Incidence: result.data,
+  //       });
+  //     },
+  //     (error) => {
+  //       this.setState({
+  //         apiFetched_District_Month_Incidence: true,
+  //         apiError_District_Month_Incidence: error,
+  //       });
+  //     }
+  //   )
+
+
+  //   // Germany Cases
+  //   fetch("https://api.corona-zahlen.org/germany/history/cases/365")
+  //   .then(res => res.json())
+  //   .then(
+  //     (result) => {
+  //       this.setState({
+  //         apiFetched_Germany_History_Cases: true,
+  //         data_Germany_History_Cases: result.data,
+  //       });
+  //     },
+  //     (error) => {
+  //       this.setState({
+  //         apiFetched_Germany_History_Cases: true,
+  //         apiError_Germany_History_Cases: error,
+  //       });
+  //     }
+  //   )
+
+  //   // Germany Recovered
+  //   fetch("https://api.corona-zahlen.org/germany/history/recovered/365")
+  //   .then(res => res.json())
+  //   .then(
+  //     (result) => {
+  //       this.setState({
+  //         apiFetched_Germany_History_Recovered: true,
+  //         data_District_Germany_History_Recovered: result.data,
+  //       });
+  //     },
+  //     (error) => {
+  //       this.setState({
+  //         apiFetched_Germany_History_Recovered: true,
+  //         apiError_Germany_History_Recovered: error,
+  //       });
+  //     }
+  //   )
+
+  //   // Germany Deaths
+  //   fetch("https://api.corona-zahlen.org/germany/history/deaths/365")
+  //   .then(res => res.json())
+  //   .then(
+  //     (result) => {
+  //       this.setState({
+  //         apiFetched_Germany_History_Deaths: true,
+  //         data_Germany_History_Deaths: result.data,
+  //       });
+  //     },
+  //     (error) => {
+  //       this.setState({
+  //         apiFetched_Germany_History_Deaths: true,
+  //         apiError_Germany_History_Deaths: error,
+  //       });
+  //     }
+  //   )
+
+  //   // Germany Incidence
+  //   fetch("https://api.corona-zahlen.org/germany/history/incidence/365")
+  //   .then(res => res.json())
+  //   .then(
+  //     (result) => {
+  //       this.setState({
+  //         apiFetched_Germany_History_Incidence: true,
+  //         data_Germany_History_Incidence: result.data,
+  //       });
+  //     },
+  //     (error) => {
+  //       this.setState({
+  //         apiFetched_Germany_History_Incidence: true,
+  //         apiError_Germany_History_Incidence: error,
+  //       });
+  //     }
+  //   )
+
+
+  //   // End Fetch
+  //   this.setState({apiFetchCompleted: true})
+  // }
+
   fetchApi(ags) {
     // District Day
     fetch("https://api.corona-zahlen.org/districts/" + ags)
@@ -126,7 +305,8 @@ class App extends React.Component {
           apiError_District_Day: error,
         });
       }
-    )
+
+    ).then(
 
     // District Month Cases
     fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/cases/365")
@@ -146,6 +326,8 @@ class App extends React.Component {
       }
     )
 
+    ).then(
+
     // District Month Recovered
     fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/recovered/365")
     .then(res => res.json())
@@ -163,6 +345,8 @@ class App extends React.Component {
         });
       }
     )
+
+    ).then(
 
     // District Month Deaths
     fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/deaths/365")
@@ -182,6 +366,8 @@ class App extends React.Component {
       }
     )
 
+    ).then(
+
     // District Month Incidence
     fetch("https://api.corona-zahlen.org/districts/"+ags+"/history/incidence/365")
     .then(res => res.json())
@@ -200,9 +386,114 @@ class App extends React.Component {
       }
     )
 
+    ).then(
+
+    // // Germany Day
+    // fetch("https://api.corona-zahlen.org/germany/")
+    // .then(res => res.json())
+    // .then(
+    //   (result) => {
+    //     this.setState({
+    //       apiFetched_Germany_Day: true,
+    //       data_Germany_Day: result.data,
+    //       dataMeta: result.meta,
+    //     });
+    //   },
+    //   (error) => {
+    //     this.setState({
+    //       apiFetched_Germany_Day: true,
+    //       apiError_Germany_Day: error,
+    //     });
+    //   }
+    // )
+      
+    // ).then(
+
+    // // Germany Cases
+    // fetch("https://api.corona-zahlen.org/germany/history/cases/365")
+    // .then(res => res.json())
+    // .then(
+    //   (result) => {
+    //     this.setState({
+    //       apiFetched_Germany_History_Cases: true,
+    //       data_Germany_History_Cases: result.data,
+    //     });
+    //   },
+    //   (error) => {
+    //     this.setState({
+    //       apiFetched_Germany_History_Cases: true,
+    //       apiError_Germany_History_Cases: error,
+    //     });
+    //   }
+    // )
+
+    // ).then(
+
+    // // Germany Recovered
+    // fetch("https://api.corona-zahlen.org/germany/history/recovered/365")
+    // .then(res => res.json())
+    // .then(
+    //   (result) => {
+    //     this.setState({
+    //       apiFetched_Germany_History_Recovered: true,
+    //       data_District_Germany_History_Recovered: result.data,
+    //     });
+    //   },
+    //   (error) => {
+    //     this.setState({
+    //       apiFetched_Germany_History_Recovered: true,
+    //       apiError_Germany_History_Recovered: error,
+    //     });
+    //   }
+    // )
+
+    // ).then(
+
+    // // Germany Deaths
+    // fetch("https://api.corona-zahlen.org/germany/history/deaths/365")
+    // .then(res => res.json())
+    // .then(
+    //   (result) => {
+    //     this.setState({
+    //       apiFetched_Germany_History_Deaths: true,
+    //       data_Germany_History_Deaths: result.data,
+    //     });
+    //   },
+    //   (error) => {
+    //     this.setState({
+    //       apiFetched_Germany_History_Deaths: true,
+    //       apiError_Germany_History_Deaths: error,
+    //     });
+    //   }
+    // )
+
+    // ).then(
+
+    // // Germany Incidence
+    // fetch("https://api.corona-zahlen.org/germany/history/incidence/365")
+    // .then(res => res.json())
+    // .then(
+    //   (result) => {
+    //     this.setState({
+    //       apiFetched_Germany_History_Incidence: true,
+    //       data_Germany_History_Incidence: result.data,
+    //     }); console.log(result.data)
+    //   },
+    //   (error) => {
+    //     this.setState({
+    //       apiFetched_Germany_History_Incidence: true,
+    //       apiError_Germany_History_Incidence: error,
+    //     });
+    //   }
+    // )
+
+    // ).then(
+
 
     // End Fetch
     this.setState({apiFetchCompleted: true})
+
+    )
   }
 
 
@@ -224,24 +515,41 @@ class App extends React.Component {
           </div>
         </div>
         {
-          this.state.apiFetchCompleted ?
-          <MainContent 
-            districtName = {agsMap["agsData"][this.state.zip]["ort"]}
-            districtDay = {this.state.data_District_Day != null ? this.state.data_District_Day[this.state.ags] : null}
-            districtMonthCases = {this.state.data_District_Month_Cases != null ? this.state.data_District_Month_Cases[this.state.ags]["history"] : null}
-            districtMonthRecovered = {this.state.data_District_Month_Recovered != null ? this.state.data_District_Month_Recovered[this.state.ags]["history"] : null}
-            districtMonthDeaths = {this.state.data_District_Month_Deaths != null ? this.state.data_District_Month_Deaths[this.state.ags]["history"] : null}
-            districtMonthIncidence = {this.state.data_District_Month_Incidence != null ? this.state.data_District_Month_Incidence[this.state.ags]["history"] : null}
+          this.state.apiFetchCompleted && this.state.scope == "district" ?
+            <MainContent 
+              districtName = {agsMap["agsData"][this.state.zip]["ort"]}
+              districtDay = {this.state.data_District_Day != null ? this.state.data_District_Day[this.state.ags] : null}
+              districtMonthCases = {this.state.data_District_Month_Cases != null ? this.state.data_District_Month_Cases[this.state.ags]["history"] : null}
+              districtMonthRecovered = {this.state.data_District_Month_Recovered != null ? this.state.data_District_Month_Recovered[this.state.ags]["history"] : null}
+              districtMonthDeaths = {this.state.data_District_Month_Deaths != null ? this.state.data_District_Month_Deaths[this.state.ags]["history"] : null}
+              districtMonthIncidence = {this.state.data_District_Month_Incidence != null ? this.state.data_District_Month_Incidence[this.state.ags]["history"] : null}
 
-            scope = {this.state.scope}
-            days = {this.state.days}
-            handleScopeToggle = {this.handleScopeToggle}
-            handleDaysToggle = {this.handleDaysToggle} 
-          />
-
+              scope = {this.state.scope}
+              days = {this.state.days}
+              handleScopeToggle = {this.handleScopeToggle}
+              handleDaysToggle = {this.handleDaysToggle} 
+            />
           :
           null
         }
+        {/* {
+          this.state.apiFetchCompleted ?
+            <MainContent 
+              districtName = {agsMap["agsData"][this.state.zip]["ort"]}
+              districtDay = {this.state.data_Germany_Day != null ? this.state.data_Germany_Day : null}
+              districtMonthCases = {this.state.data_Germany_History_Cases != null ? this.state.data_Germany_History_Cases : null}
+              districtMonthRecovered = {this.state.data_Germany_History_Recovered != null ? this.state.data_Germany_History_Recovered : null}
+              districtMonthDeaths = {this.state.data_Germany_History_Deaths != null ? this.state.data_Germany_History_Deaths : null}
+              districtMonthIncidence = {this.state.data_Germany_History_Incidence != null ? this.state.data_Germany_History_Incidence : null}
+
+              scope = {this.state.scope}
+              days = {this.state.days}
+              handleScopeToggle = {this.handleScopeToggle}
+              handleDaysToggle = {this.handleDaysToggle} 
+            />
+          :
+          console.log(this.state.scope)
+        } */}
 
       </div>
     )
@@ -278,7 +586,7 @@ class MainContent extends React.Component {
         {this.props.districtMonthCases != null && this.props.districtMonthRecovered != null && this.props.districtMonthDeaths != null && this.props.districtMonthIncidence && this.props.districtDay != null ?
           <DistrictMonth districtName={this.props.districtName} dataDay={this.props.districtDay} scope = {this.props.scope} handleScopeToggle={this.handleScopeToggle} days = {this.props.days} handleDaysToggle={this.handleDaysToggle} cases = {this.props.districtMonthCases} recovered = {this.props.districtMonthRecovered} deaths = {this.props.districtMonthDeaths} incidence = {this.props.districtMonthIncidence}/>
           :
-          null
+          console.log("Could not load")
         }
       </div>
     )
