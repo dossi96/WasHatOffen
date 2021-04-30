@@ -835,7 +835,7 @@ class DistrictMonth extends React.Component {
                 // }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <ReferenceLine y={100} label="100" stroke="#6D7B8C" alwaysShow={true} strokeDasharray="5 5"/>
+                <ReferenceLine y={100} stroke="#6D7B8C" alwaysShow={true} strokeDasharray="5 5"/>
                 <XAxis dataKey="datum" style={{fontFamily: "var(--mainFont)"}}/>
                 <YAxis domain={[0, dataMax => (Math.round((dataMax + 100)/100) * 100)]} style={{fontFamily: "var(--mainFont)"}}/>
                 <Tooltip style={{fontFamily: "var(--mainFont)"}}/>
