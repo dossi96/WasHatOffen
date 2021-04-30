@@ -12,7 +12,7 @@ import {agsMap} from './agsMap.js'
 
 // Import Victory
 import { VictoryChart, VictoryGroup, VictoryBar } from 'victory'
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line, ReferenceLine } from 'recharts';
 
 
 class App extends React.Component {
@@ -693,6 +693,7 @@ class DistrictMonth extends React.Component {
     var cases = this.props.cases.slice(-1* days);
     var recovered = this.props.recovered.slice(-1* days);
     var deaths = this.props.deaths.slice(-1* days);
+    var incidence = this.props.incidence.slice(-1* days);
     cases.map((d, index) => {
       var element = {}
 
@@ -704,6 +705,7 @@ class DistrictMonth extends React.Component {
       element["Neue Fälle"] = cases[index]["cases"];
       element["Genesene Personen"] = recovered[index]["recovered"];
       element["Todesfälle"] = deaths[index]["deaths"];
+      element["Inzidenz"] = Math.round((incidence[index]["weekIncidence"] + Number.EPSILON) * 100) / 100;
 
       data.push(element);
     })
@@ -777,7 +779,7 @@ class DistrictMonth extends React.Component {
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="datum" style={{fontFamily: "var(--mainFont)"}}/>
-                <YAxis domain={[0,'dataMax']} style={{fontFamily: "var(--mainFont)"}}/>
+                <YAxis domain={[0,dataMax => Math.pow(10, Math.ceil(Math.log10((Math.round(dataMax * 1.2 / 100)*100))))]} style={{fontFamily: "var(--mainFont)"}}/>
                 <Tooltip style={{fontFamily: "var(--mainFont)"}}/>
                 <Legend style={{fontFamily: "var(--mainFont)"}}/>
                 <Bar dataKey="Neue Fälle" fill="#465973" />
@@ -806,12 +808,39 @@ class DistrictMonth extends React.Component {
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="datum" style={{fontFamily: "var(--mainFont)"}}/>
-                <YAxis domain={[0,'dataMax']} style={{fontFamily: "var(--mainFont)"}}/>
+                <YAxis domain={[0,dataMax => Math.pow(10, Math.ceil(Math.log10((Math.round(dataMax * 1.2 / 100)*100))))]} style={{fontFamily: "var(--mainFont)"}}/>
                 <Tooltip style={{fontFamily: "var(--mainFont)"}}/>
                 <Legend style={{fontFamily: "var(--mainFont)"}}/>
                 <Line type="monotone" dot={false} dataKey="Fälle" stroke="#465973" />
                 <Line type="monotone" dot={false} dataKey="Genesene Personen" stroke="#6181b0" />
                 <Line type="monotone" dot={false} dataKey="Todesfälle" stroke="#202936" />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Incidence */}
+        <div className="plotWrapper">
+          <div className="plotContainer">
+            <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+                width={"100%"}
+                height={"100%"}
+                data={this.state.data}
+                // margin={{
+                //   top: 5,
+                //   right: 30,
+                //   left: 20,
+                //   bottom: 5,
+                // }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <ReferenceLine y={100} label="100" stroke="#6D7B8C" alwaysShow={true} strokeDasharray="5 5"/>
+                <XAxis dataKey="datum" style={{fontFamily: "var(--mainFont)"}}/>
+                <YAxis domain={[0, dataMax => (Math.round((dataMax + 100)/100) * 100)]} style={{fontFamily: "var(--mainFont)"}}/>
+                <Tooltip style={{fontFamily: "var(--mainFont)"}}/>
+                <Legend style={{fontFamily: "var(--mainFont)"}}/>
+                <Line type="monotone" dot={false} dataKey="Inzidenz" stroke="#465973" />
               </LineChart>
             </ResponsiveContainer>
           </div>
