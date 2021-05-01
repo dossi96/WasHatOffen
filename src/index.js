@@ -480,6 +480,43 @@ class App extends React.Component {
     )
 
 
+    // Vaccinations Day
+    await fetch("https://api.corona-zahlen.org/vaccinations")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          apiFetched_Vaccinations_Day: true,
+          data_Vaccinations_Day: result.data,
+        });
+      },
+      (error) => {
+        this.setState({
+          apiFetched_Vaccinations_Day: true,
+          apiError_Vaccinations_Day: error,
+        });
+      }
+    )
+
+    // Vaccinations History
+    await fetch("https://api.corona-zahlen.org/vaccinations/history")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          apiFetched_Vaccinations_History: true,
+          data_Vaccinations_History: result.data.history,
+        });
+      },
+      (error) => {
+        this.setState({
+          apiFetched_Vaccinations_History: true,
+          apiError_Vaccinations_History: error,
+        });
+      }
+    )
+
+
 
     // End Fetch
     this.setState({apiFetchCompleted: true})
@@ -515,6 +552,8 @@ class App extends React.Component {
               districtMonthRecovered = {this.state.data_District_Month_Recovered[this.state.ags]["history"]}
               districtMonthDeaths = {this.state.data_District_Month_Deaths[this.state.ags]["history"]}
               districtMonthIncidence = {this.state.data_District_Month_Incidence[this.state.ags]["history"]}
+              vaccinationsDay = {this.state.data_Vaccinations_Day != null ? this.state.data_Vaccinations_Day : null}
+              vaccinationsHistory = {this.state.data_Vaccinations_History != null ? this.state.data_Vaccinations_History : null}
 
               scope = {this.state.scope}
               days = {this.state.days}
@@ -533,6 +572,8 @@ class App extends React.Component {
               districtMonthRecovered = {this.state.data_Germany_History_Recovered != null ? this.state.data_Germany_History_Recovered : null}
               districtMonthDeaths = {this.state.data_Germany_History_Deaths != null ? this.state.data_Germany_History_Deaths : null}
               districtMonthIncidence = {this.state.data_Germany_History_Incidence != null ? this.state.data_Germany_History_Incidence : null}
+              vaccinationsDay = {this.state.data_Vaccinations_Day != null ? this.state.data_Vaccinations_Day : null}
+              vaccinationsHistory = {this.state.data_Vaccinations_History != null ? this.state.data_Vaccinations_History : null}
 
               scope = {this.state.scope}
               days = {this.state.days}
@@ -576,7 +617,19 @@ class MainContent extends React.Component {
           null
         }
         {this.props.districtMonthCases != null && this.props.districtMonthRecovered != null && this.props.districtMonthDeaths != null && this.props.districtMonthIncidence != null && this.props.districtDay != null ?
-          <DistrictMonth districtName={this.props.districtName} dataDay={this.props.districtDay} scope = {this.props.scope} handleScopeToggle={this.handleScopeToggle} days = {this.props.days} handleDaysToggle={this.handleDaysToggle} cases = {this.props.districtMonthCases} recovered = {this.props.districtMonthRecovered} deaths = {this.props.districtMonthDeaths} incidence = {this.props.districtMonthIncidence}/>
+          <DistrictMonth 
+            districtName={this.props.districtName} 
+            dataDay={this.props.districtDay} 
+            scope = {this.props.scope} 
+            handleScopeToggle={this.handleScopeToggle} 
+            days = {this.props.days} 
+            handleDaysToggle={this.handleDaysToggle} 
+            cases = {this.props.districtMonthCases} 
+            recovered = {this.props.districtMonthRecovered} 
+            deaths = {this.props.districtMonthDeaths} 
+            incidence = {this.props.districtMonthIncidence}
+            vaccinationsDay = {this.props.vaccinationsDay}
+            vaccinationsHistory = {this.props.vaccinationsHistory}/>
           :
           null
         }
@@ -689,7 +742,6 @@ class DistrictMonth extends React.Component {
   updateData(days) {
     // Per Day Statistics
     var data = []
-
     var cases = this.props.cases.slice(-1* days);
     var recovered = this.props.recovered.slice(-1* days);
     var deaths = this.props.deaths.slice(-1* days);
@@ -707,9 +759,13 @@ class DistrictMonth extends React.Component {
       element["Todesfälle"] = deaths[index]["deaths"];
       element["Inzidenz"] = Math.round((incidence[index]["weekIncidence"] + Number.EPSILON) * 100) / 100;
 
+
       data.push(element);
     })
+
     this.setState({data: data})
+
+
 
 
     // Cumulativ Statistics
@@ -743,9 +799,43 @@ class DistrictMonth extends React.Component {
 
     dataCumulative = dataCumulative.reverse();
     
-    
     this.setState({dataCumulative: dataCumulative})
-    console.log([data,dataCumulative])
+    
+    
+    // Vaccination Statistics
+    if (this.props.scope == "country") {
+      console.log(this.props.vaccinationsDay)
+      var dataVaccinations = [];
+      var totalFirstVaccinations = this.props.vaccinationsDay["vaccinated"];
+      var totalSecondVaccinations = this.props.vaccinationsDay["secondVaccination"]["vaccinated"];
+
+      var vacHist = this.props.vaccinationsHistory.slice(-1* days);
+      var arrayLength = vacHist.length - 1;
+
+      vacHist.map((d, index) => {
+        var element = {}
+
+        var dateDay = vacHist[cases.length - 1 - index]["date"].substring(8,10);
+        var dateMonth = vacHist[cases.length - 1 - index]["date"].substring(5,7);
+        var dateYear = vacHist[cases.length - 1 - index]["date"].substring(2,4);
+        var dateCorrected = dateDay + "." + dateMonth + "." + dateYear;
+  
+        element["datum"] = dateCorrected;
+  
+        element["Erste Impfung"] = totalFirstVaccinations;
+        totalFirstVaccinations -= vacHist[arrayLength - index]["firstVaccination"];
+
+        element["Zweite Impfung"] = totalSecondVaccinations;
+        totalSecondVaccinations -= vacHist[arrayLength - index]["secondVaccination"];
+
+        dataVaccinations.push(element);
+
+        
+      })
+      dataVaccinations = dataVaccinations.reverse();
+      this.setState({dataVaccinations: dataVaccinations});
+    }
+
   }
 
   handleScopeToggle() {
@@ -845,6 +935,35 @@ class DistrictMonth extends React.Component {
             </ResponsiveContainer>
           </div>
         </div>
+
+
+
+        {/* Vaccinations */}
+        {
+          this.props.scope == "country" ?
+            <div className="plotWrapper">
+              <div className="plotContainer">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    width={"100%"}
+                    height={"100%"}
+                    data={this.state.dataVaccinations}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="datum" style={{fontFamily: "var(--mainFont)"}}/>
+                    <YAxis domain={[0,dataMax => Math.pow(10, Math.ceil(Math.log10((Math.round(dataMax * 1.2 / 100)*100))))]} style={{fontFamily: "var(--mainFont)"}}/>
+                    <Tooltip style={{fontFamily: "var(--mainFont)"}}/>
+                    <Legend style={{fontFamily: "var(--mainFont)"}}/>
+                    <Line type="monotone" dot={false} dataKey="Erste Impfung" stroke="#465973" />
+                    <Line type="monotone" dot={false} dataKey="Zweite Impfung" stroke="#6181b0" />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+            :
+            null
+
+        }
 
 
 
