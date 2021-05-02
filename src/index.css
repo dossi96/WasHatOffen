@@ -145,3 +145,38 @@ p.districtDayHeader, button.toggleButton {
 {
   font-family: var(--mainFont); 
 }
+
+.recharts-surface {
+  overflow: visible;
+}
+
+p.plotHeader {
+  width: 100%;
+  font-family: var(--mainFont);
+  color: var(--secondary);
+  font-size: 3vh;
+  text-align: center;
+  margin-top: 0;
+}
+
+
+.plotSpacerWrapper {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1em;
+}
+
+.plotSpacerTop, .plotSpacerBottom {
+  width: 70vw;
+  height: 50%;
+}
+.plotSpacerTop {
+  border-bottom: solid 1px var(--primary);
+}
+.plotSpacerBottom {
+
+  border-top: solid 1px var(--primary);
+}

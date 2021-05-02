@@ -815,9 +815,9 @@ class DistrictMonth extends React.Component {
       vacHist.map((d, index) => {
         var element = {}
 
-        var dateDay = vacHist[cases.length - 1 - index]["date"].substring(8,10);
-        var dateMonth = vacHist[cases.length - 1 - index]["date"].substring(5,7);
-        var dateYear = vacHist[cases.length - 1 - index]["date"].substring(2,4);
+        var dateDay = vacHist[arrayLength - index]["date"].substring(8,10);
+        var dateMonth = vacHist[arrayLength - index]["date"].substring(5,7);
+        var dateYear = vacHist[arrayLength - index]["date"].substring(2,4);
         var dateCorrected = dateDay + "." + dateMonth + "." + dateYear;
   
         element["datum"] = dateCorrected;
@@ -847,11 +847,24 @@ class DistrictMonth extends React.Component {
   }
 
   render() {
+    const DataFormater = (number) => {
+      if(number >= 1000000000){
+        return (number/1000000000).toString() + 'Mil.';
+      }else if(number >= 1000000){
+        return (number/1000000).toString() + ' Mio.';
+      }else if(number >= 1000){
+        return (number/1000).toString() + ' Tsd.';
+      }else{
+        return number.toString();
+      }
+    }
+
     return (
-      <div className="contentContainer">
+      <div className="contentContainer" style={{paddingTop: "2em"}}>
         <p className="districtDayHeader">Statistiken der letzten <button className="toggleButton" onClick={this.handleDaysToggle}>{this.props.days}</button> Tage für <button className="toggleButton" onClick={this.handleScopeToggle}>{this.props.scope == "district" ? this.props.districtName : "Deuschland"}</button></p>
 
         {/* Per Day Statistics */}
+        <p className="plotHeader" style={{paddingTop: "1em"}}>Fallzahlen pro Tag</p>
         <div className="plotWrapper">
           <div className="plotContainer">
 
@@ -869,8 +882,11 @@ class DistrictMonth extends React.Component {
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="datum" style={{fontFamily: "var(--mainFont)"}}/>
-                <YAxis domain={[0,dataMax => Math.pow(10, Math.ceil(Math.log10((Math.round(dataMax * 1.2 / 100)*100))))]} style={{fontFamily: "var(--mainFont)"}}/>
-                <Tooltip style={{fontFamily: "var(--mainFont)"}}/>
+                {/* <YAxis domain={[0,dataMax => Math.pow(10, Math.ceil(Math.log10((Math.round(dataMax * 1.2 / 100)*100))))]} style={{fontFamily: "var(--mainFont)"}}/> */}
+                {/* <YAxis domain={[0,dataMax => Math.ceil(dataMax * 1.2 / Math.pow(10, Math.log10(dataMax * 1.2)-1))*Math.pow(10, Math.log10(dataMax * 1.2)-1)]} style={{fontFamily: "var(--mainFont)"}}/> */}
+                <YAxis domain={[0,dataMax => Math.round((dataMax * 1.2) / Math.pow(10, Math.round((Math.log(dataMax *1.2))/Math.log(10) - 1))) * Math.pow(10, Math.round((Math.log(dataMax *1.2))/Math.log(10) - 1))]} tickFormatter={DataFormater} style={{fontFamily: "var(--mainFont)"}}/>
+                
+                <Tooltip style={{fontFamily: "var(--mainFont)"}} formatter={(value) => {return value.toLocaleString();}}/>
                 <Legend style={{fontFamily: "var(--mainFont)"}}/>
                 <Bar dataKey="Neue Fälle" fill="#465973" />
                 <Bar dataKey="Genesene Personen" fill="#6181b0" />
@@ -881,7 +897,13 @@ class DistrictMonth extends React.Component {
           </div>
         </div>
 
+        <div className="plotSpacerWrapper">
+          <div className="plotSpacerTop"></div>
+          <div className="plotSpacerBottom"></div>
+        </div>
+
         {/* Cumulated Statistics */}
+        <p className="plotHeader">Kumulierte Fallzahlen</p>
         <div className="plotWrapper">
           <div className="plotContainer">
             <ResponsiveContainer width="100%" height="100%">
@@ -898,8 +920,8 @@ class DistrictMonth extends React.Component {
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="datum" style={{fontFamily: "var(--mainFont)"}}/>
-                <YAxis domain={[0,dataMax => Math.pow(10, Math.ceil(Math.log10((Math.round(dataMax * 1.2 / 100)*100))))]} style={{fontFamily: "var(--mainFont)"}}/>
-                <Tooltip style={{fontFamily: "var(--mainFont)"}}/>
+                <YAxis domain={[0,dataMax => Math.round((dataMax * 1.2) / Math.pow(10, Math.round((Math.log(dataMax *1.2))/Math.log(10) - 1))) * Math.pow(10, Math.round((Math.log(dataMax *1.2))/Math.log(10) - 1))]} tickFormatter={DataFormater} style={{fontFamily: "var(--mainFont)"}}/>
+                <Tooltip style={{fontFamily: "var(--mainFont)"}} formatter={(value) => {return value.toLocaleString();}}/>
                 <Legend style={{fontFamily: "var(--mainFont)"}}/>
                 <Line type="monotone" dot={false} dataKey="Fälle" stroke="#465973" />
                 <Line type="monotone" dot={false} dataKey="Genesene Personen" stroke="#6181b0" />
@@ -909,7 +931,13 @@ class DistrictMonth extends React.Component {
           </div>
         </div>
 
+        <div className="plotSpacerWrapper">
+          <div className="plotSpacerTop"></div>
+          <div className="plotSpacerBottom"></div>
+        </div>
+
         {/* Incidence */}
+        <p className="plotHeader">Inzidenz</p>
         <div className="plotWrapper">
           <div className="plotContainer">
             <ResponsiveContainer width="100%" height="100%">
@@ -928,7 +956,7 @@ class DistrictMonth extends React.Component {
                 <ReferenceLine y={100} stroke="#6D7B8C" alwaysShow={true} strokeDasharray="5 5"/>
                 <XAxis dataKey="datum" style={{fontFamily: "var(--mainFont)"}}/>
                 <YAxis domain={[0, dataMax => (Math.round((dataMax + 100)/100) * 100)]} style={{fontFamily: "var(--mainFont)"}}/>
-                <Tooltip style={{fontFamily: "var(--mainFont)"}}/>
+                <Tooltip style={{fontFamily: "var(--mainFont)"}} formatter={(value) => {return value.toLocaleString();}}/>
                 <Legend style={{fontFamily: "var(--mainFont)"}}/>
                 <Line type="monotone" dot={false} dataKey="Inzidenz" stroke="#465973" />
               </LineChart>
@@ -941,25 +969,35 @@ class DistrictMonth extends React.Component {
         {/* Vaccinations */}
         {
           this.props.scope == "country" ?
-            <div className="plotWrapper">
-              <div className="plotContainer">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart
-                    width={"100%"}
-                    height={"100%"}
-                    data={this.state.dataVaccinations}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="datum" style={{fontFamily: "var(--mainFont)"}}/>
-                    <YAxis domain={[0,dataMax => Math.pow(10, Math.ceil(Math.log10((Math.round(dataMax * 1.2 / 100)*100))))]} style={{fontFamily: "var(--mainFont)"}}/>
-                    <Tooltip style={{fontFamily: "var(--mainFont)"}}/>
-                    <Legend style={{fontFamily: "var(--mainFont)"}}/>
-                    <Line type="monotone" dot={false} dataKey="Erste Impfung" stroke="#465973" />
-                    <Line type="monotone" dot={false} dataKey="Zweite Impfung" stroke="#6181b0" />
-                  </LineChart>
-                </ResponsiveContainer>
+            <div>
+                      <div className="plotSpacerWrapper">
+          <div className="plotSpacerTop"></div>
+          <div className="plotSpacerBottom"></div>
+        </div>
+              <p className="plotHeader">Impfungen</p>
+
+              <div className="plotWrapper">
+                <div className="plotContainer">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart
+                      width={"100%"}
+                      height={"100%"}
+                      data={this.state.dataVaccinations}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis dataKey="datum" style={{fontFamily: "var(--mainFont)"}}/>
+                      <YAxis domain={[0,dataMax => Math.round((dataMax * 1.2) / Math.pow(10, Math.round((Math.log(dataMax *1.2))/Math.log(10) - 1))) * Math.pow(10, Math.round((Math.log(dataMax *1.2))/Math.log(10) - 1))]} style={{fontFamily: "var(--mainFont)"}}  tickFormatter={DataFormater}/>
+                      <Tooltip style={{fontFamily: "var(--mainFont)"}} formatter={(value) => {return value.toLocaleString();}}/>
+                      <Legend style={{fontFamily: "var(--mainFont)"}}/>
+                      <Line type="monotone" dot={false} dataKey="Erste Impfung" stroke="#465973" />
+                      <Line type="monotone" dot={false} dataKey="Zweite Impfung" stroke="#6181b0" />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
               </div>
             </div>
+            
+
             :
             null
 
