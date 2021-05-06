@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/WasHatOffen/static/css/main.ed568c33.chunk.css",
-    "main.js": "/WasHatOffen/static/js/main.1312a729.chunk.js",
-    "main.js.map": "/WasHatOffen/static/js/main.1312a729.chunk.js.map",
+    "main.js": "/WasHatOffen/static/js/main.4dbe1ef6.chunk.js",
+    "main.js.map": "/WasHatOffen/static/js/main.4dbe1ef6.chunk.js.map",
     "runtime-main.js": "/WasHatOffen/static/js/runtime-main.88dfe2e4.js",
     "runtime-main.js.map": "/WasHatOffen/static/js/runtime-main.88dfe2e4.js.map",
-    "static/js/2.afbb542a.chunk.js": "/WasHatOffen/static/js/2.afbb542a.chunk.js",
-    "static/js/2.afbb542a.chunk.js.map": "/WasHatOffen/static/js/2.afbb542a.chunk.js.map",
+    "static/js/2.3771f672.chunk.js": "/WasHatOffen/static/js/2.3771f672.chunk.js",
+    "static/js/2.3771f672.chunk.js.map": "/WasHatOffen/static/js/2.3771f672.chunk.js.map",
     "index.html": "/WasHatOffen/index.html",
     "static/css/main.ed568c33.chunk.css.map": "/WasHatOffen/static/css/main.ed568c33.chunk.css.map",
-    "static/js/2.afbb542a.chunk.js.LICENSE.txt": "/WasHatOffen/static/js/2.afbb542a.chunk.js.LICENSE.txt"
+    "static/js/2.3771f672.chunk.js.LICENSE.txt": "/WasHatOffen/static/js/2.3771f672.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.88dfe2e4.js",
-    "static/js/2.afbb542a.chunk.js",
+    "static/js/2.3771f672.chunk.js",
     "static/css/main.ed568c33.chunk.css",
-    "static/js/main.1312a729.chunk.js"
+    "static/js/main.4dbe1ef6.chunk.js"
   ]
 }
